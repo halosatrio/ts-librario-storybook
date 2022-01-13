@@ -1,0 +1,179 @@
+{
+  "rekomendasiBuku": [
+    {
+      "_id": "5f040763e9e32dacff25f96c",
+      "isbn": "9786024526986",
+      "judul": "Sebuah Seni untuk Bersikap Bodo Amat",
+      "bahasa": "Indonesia",
+      "genre": { "_id": "5f0406594cf62eb10e265102", "name": "Self Help" },
+      "penulis": "Mark Manson",
+      "penerbit": "Grasindo",
+      "kondisi": "Baik",
+      "ketersediaan": "Tersedia",
+      "imageUrl": "/images/self-help-bodo-amat.jpg",
+      "isPopulas": true,
+      "kode": "H"
+    },
+    {
+      "_id": "5f04076c17702d5c00794446",
+      "isbn": "9786022912347",
+      "judul": "1984",
+      "bahasa": "Indonesia",
+      "genre": { "_id": "5f04063750c55b3ca78d648d", "name": "Novel" },
+      "penulis": "George Orwell",
+      "penerbit": "Bentang Pustaka",
+      "kondisi": "Baik",
+      "ketersediaan": "Tersedia",
+      "imageUrl": "/images/novel-1984.jpg",
+      "isPopular": false,
+      "kode": "Spasso Cafe"
+    },
+    {
+      "_id": "5f040739574c36e9086f8bea",
+      "isbn": "9786020325781",
+      "judul": "Selamat Menunaikan Ibadah Puisi",
+      "bahasa": "Indonesia",
+      "genre": { "_id": "5f04065eafb9e7be94479796", "name": "Puisi" },
+      "penulis": "Joko Pinurbo",
+      "penerbit": "Gramedia Pustaka Utama",
+      "kondisi": "Baik",
+      "ketersediaan": "Tersedia",
+      "imageUrl": "/images/puisi-ibadah-puisi.jpg",
+      "isPopular": true,
+      "kode": "Spasso Cafe"
+    }
+  ],
+  "pilihanBuku": [
+    {
+      "name": "Pilihan Buku Nonfiksi",
+      "items": [
+        {
+          "_id": "5f041fa96327a95b23cb1523",
+          "isbn": "9786025868504",
+          "judul": "Enaknya Berdebat dengan Orang Goblok",
+          "bahasa": "Indonesia",
+          "genre": { "_id": "5f0405eaa6046c3a222514be", "name": "Nonfiksi" },
+          "penulis": "Puthut EA",
+          "penerbit": "Shira Media",
+          "kondisi": "Baik",
+          "ketersediaan": "Tersedia",
+          "imageUrl": "/images/nonfiksi-enaknya-berdebat.jpg",
+          "isPopular": true,
+          "kode": "WA"
+        },
+        {
+          "_id": "5f041fc3dda489a8bcdcbb5b",
+          "isbn": "9786021318133",
+          "judul": "Melawat ke Timur",
+          "bahasa": "Indonesia",
+          "genre": { "_id": "5f0405eaa6046c3a222514be", "name": "Nonfiksi" },
+          "penulis": "Kardono Setyorakhmadi",
+          "penerbit": "Mojok",
+          "kondisi": "Baik",
+          "ketersediaan": "Tersedia",
+          "imageUrl": "/images/nonfiksi-melawat-ke-timur.jpg",
+          "isPopular": false,
+          "kode": "WA"
+        },
+        {
+          "_id": "5f041fda2943f3e8f8c50edd",
+          "isbn": "9786020311111",
+          "judul": "Migas the Untold Story",
+          "bahasa": "Indonesia",
+          "genre": { "_id": "5f0405eaa6046c3a222514be", "name": "Nonfiksi" },
+          "penulis": "AM Putut Prabantoro",
+          "penerbit": "Gramedia Pustaka Utama",
+          "kondisi": "Baik",
+          "ketersediaan": "Tersedia",
+          "imageUrl": "/images/nonfiksi-migas-story.jpg",
+          "isPopular": false,
+          "kode": "WA"
+        },
+        {
+          "_id": "5f04201d5f6ab46833bb3ade",
+          "isbn": "9786027306905",
+          "judul": "Fenomenologi Wanita Ber-high heels",
+          "bahasa": "Indonesia",
+          "genre": { "_id": "5f0405eaa6046c3a222514be", "name": "Nonfiksi" },
+          "penulis": "Ika Noorharini",
+          "penerbit": "PT Artha Kencana Mandiri",
+          "kondisi": "Baik",
+          "ketersediaan": "Tersedia",
+          "imageUrl": "/images/nonfiksi-wanita-high-heels.jpg",
+          "isPopular": false,
+          "kode": "Spasso Cafe"
+        }
+      ]
+    },
+    {
+      "name": "Pilihan Buku Novel",
+      "items": [
+        {
+          "_id": "5f040773f23e46ba32fe6f3c",
+          "isbn": "9786020290508",
+          "judul": "#TemanTapiMenikah",
+          "bahasa": "Indonesia",
+          "genre": { "_id": "5f04063750c55b3ca78d648d", "name": "Novel" },
+          "penulis": "Ayudia Bing Slamet & Ditto Percussion",
+          "penerbit": "Elex Media Komputindo",
+          "kondisi": "Baik",
+          "ketersediaan": "Tersedia",
+          "imageUrl": "/images/novel-teman-tapi-menikah.jpg",
+          "isPopular": false,
+          "kode": "H"
+        },
+        {
+          "_id": "5f0407792db868f4f9ff8b84",
+          "isbn": "9786021318485",
+          "judul": "24 Jam Bersama Gaspar, Sebuah Cerita Detektif",
+          "bahasa": "Indonesia",
+          "genre": { "_id": "5f04063750c55b3ca78d648d", "name": "Novel" },
+          "penulis": "Sabda Armandio",
+          "penerbit": "Mojok",
+          "kondisi": "Baik",
+          "ketersediaan": "Tersedia",
+          "imageUrl": "/images/novel-gaspar.jpg",
+          "isPopular": false,
+          "kode": "H"
+        },
+        {
+          "_id": "5f04076f2a875bd2d35fa93e",
+          "isbn": "9789799731234",
+          "judul": "Bumi Manusia",
+          "bahasa": "Indonesia",
+          "genre": { "_id": "5f04063750c55b3ca78d648d", "name": "Novel" },
+          "penulis": "Pramoedya Ananta Toer",
+          "penerbit": "Lentera Dipantara",
+          "kondisi": "",
+          "ketersediaan": "Tersedia",
+          "imageUrl": "/images/novel-bumi-manusia.jpg",
+          "isPopular": true,
+          "kode": "FA"
+        },
+        {
+          "_id": "5f04077c65129e475419288b",
+          "isbn": "9786022912828",
+          "judul": "Animal Farm",
+          "bahasa": "Indonesia",
+          "genre": { "_id": "5f04063750c55b3ca78d648d", "name": "Novel" },
+          "penulis": "George Orwell",
+          "penerbit": "Bentang Pustaka",
+          "kondisi": "Baik",
+          "ketersediaan": "Tersedia",
+          "imageUrl": "/images/novel-animal-farm.jpg",
+          "isPopular": false,
+          "kode": "H"
+        }
+      ]
+    }
+  ],
+  "testimonial": {
+    "_id": "asd1293uasdads1",
+    "imageUrl": "/images/testimonial-landingpages.jpg",
+    "name": "Happy Family",
+    "rate": 4.55,
+    "content": "What a great trip with my family and I should try again next time soon ...",
+    "familyName": "Angga",
+    "familyOccupation": "Product Designer"
+  }
+}
