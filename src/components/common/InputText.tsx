@@ -1,25 +1,39 @@
 import React, { useState } from "react";
 import propTypes from "prop-types";
 
-const InputText = (props) => {
-  const {
-    value,
-    type,
-    placeholder,
-    name,
-    prepend,
-    append,
-    outerClassName,
-    inputClassName,
-    errorResponse,
-  } = props;
+type InputTextProps = {
+  name: string;
+  value: number | string;
+  errorResponse: string;
+  onChange: (target: { name: string; value: string }) => void;
+  prepend?: number | string;
+  append?: number | string;
+  type?: string;
+  placeholder?: string;
+  outerClassName?: string;
+  inputClassName?: string;
+};
 
-  const [HasError, setHasError] = useState(null);
-  let pattern = "";
+const InputText = ({
+  value,
+  type = "text",
+  placeholder = "Please type here...",
+  errorResponse = "Please match the requested format.",
+  name,
+  onChange,
+  prepend,
+  append,
+  outerClassName,
+  inputClassName,
+}: InputTextProps) => {
+  // states
+  const [HasError, setHasError] = useState<string | null>(null);
+
+  let pattern = new RegExp("");
   if (type === "email") pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (type === "tel") pattern = "[0-9]*";
+  if (type === "tel") pattern = /"[0-9]*"/;
 
-  const onChange = (event) => {
+  const handleChange = (event) => {
     const target = {
       target: {
         name: name,
@@ -33,9 +47,9 @@ const InputText = (props) => {
     }
 
     if (type === "tel") {
-      if (event.target.validity.valid) props.onChange(target);
+      if (event.target.validity.valid) onChange(target);
     } else {
-      props.onChange(target);
+      onChange(target);
     }
   };
 
@@ -50,11 +64,11 @@ const InputText = (props) => {
         <input
           name={name}
           type={type}
-          pattern={pattern}
+          pattern={pattern.toString()}
           className={["form-control", inputClassName].join(" ")}
           value={value}
           placeholder={placeholder}
-          onChange={onChange}
+          onChange={handleChange}
         />
         {append && (
           <div className="input-group-append bg-gray-900">
@@ -65,25 +79,6 @@ const InputText = (props) => {
       {HasError && <span className="error-helper">{HasError}</span>}
     </div>
   );
-};
-
-InputText.defaultProps = {
-  type: "text",
-  pattern: "",
-  placeholder: "Please type here...",
-  errorResponse: "Please match the requested format.",
-};
-
-InputText.propTypes = {
-  name: propTypes.string.isRequired,
-  value: propTypes.oneOfType([propTypes.number, propTypes.string]).isRequired,
-  onChange: propTypes.func.isRequired,
-  prepend: propTypes.oneOfType([propTypes.number, propTypes.string]),
-  append: propTypes.oneOfType([propTypes.number, propTypes.string]),
-  type: propTypes.string,
-  placeholder: propTypes.string,
-  outerClassName: propTypes.string,
-  inputClassName: propTypes.string,
 };
 
 export default InputText;

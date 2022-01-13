@@ -1,19 +1,30 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import propTypes from "prop-types";
 
-const InputFile = (props) => {
-  const {
-    value,
-    placeholder,
-    name,
-    accept,
-    prepend,
-    append,
-    outerClassName,
-    inputClassName,
-  } = props;
+type InputFileProps = {
+  name: string;
+  accept: string;
+  value: string;
+  onChange?: () => void;
+  prepend?: number | string;
+  append?: number | string;
+  placeholder?: string;
+  outerClassName?: string;
+  inputClassName?: string;
+};
 
-  const refInputFile = useRef(null);
+const InputFile = ({
+  value,
+  placeholder = "Browse a file...",
+  name,
+  accept,
+  prepend,
+  append,
+  onChange,
+  outerClassName,
+  inputClassName,
+}: InputFileProps) => {
+  const refInputFile = useRef<HTMLInputElement | null>(null);
 
   return (
     <div className={["input-text mb-3", outerClassName].join(" ")}>
@@ -30,10 +41,10 @@ const InputFile = (props) => {
           className="d-none"
           type="file"
           value={value}
-          onChange={props.onchange}
+          onChange={onChange}
         />
         <input
-          onClick={() => refInputFile.current.click()}
+          onClick={() => refInputFile.current?.click()}
           defaultValue={value}
           placeholder={placeholder}
           className={["form-control", inputClassName].join(" ")}
@@ -46,22 +57,6 @@ const InputFile = (props) => {
       </div>
     </div>
   );
-};
-
-InputFile.defaultProps = {
-  placeholder: "Browse a file...",
-};
-
-InputFile.propTypes = {
-  name: propTypes.string.isRequired,
-  accept: propTypes.string.isRequired,
-  value: propTypes.string.isRequired,
-  onChange: propTypes.func.isRequired,
-  prepend: propTypes.oneOfType([propTypes.number, propTypes.string]),
-  append: propTypes.oneOfType([propTypes.number, propTypes.string]),
-  placeholder: propTypes.string,
-  outerClassName: propTypes.string,
-  inputClassName: propTypes.string,
 };
 
 export default InputFile;

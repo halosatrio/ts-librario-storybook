@@ -1,7 +1,13 @@
-import React from "react";
-import propTypes from "prop-types";
+type BookData = {
+  judul: string;
+  penulis: string;
+  penerbit: string;
+  genre: string;
+  isbn: string;
+  kondisi: string;
+};
 
-const BookDetail = ({ data }) => {
+const BookDetail = (data: BookData) => {
   return (
     <>
       <h3 className="mb-4 text-gray-800">Detail Buku</h3>
@@ -35,10 +41,6 @@ const BookDetail = ({ data }) => {
       </table>
     </>
   );
-};
-
-BookDetail.propTypes = {
-  data: propTypes.object.isRequired,
 };
 
 export default BookDetail;

@@ -1,17 +1,15 @@
-import React from "react";
-import propTypes from "prop-types";
+type BookDataImage = {
+  imageUrl: string;
+  Judul: string;
+};
 
-const BookImage = ({ data }) => {
+const BookImage = (data: BookDataImage) => {
   return (
     <figure>
       <img src={data.imageUrl} className="img-fluid" alt={data.Judul} />
       <figcaption className="figure-caption">Cover depan</figcaption>
     </figure>
   );
-};
-
-BookImage.propTypes = {
-  data: propTypes.object.isRequired,
 };
 
 export default BookImage;

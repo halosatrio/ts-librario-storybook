@@ -1,8 +1,25 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import propTypes from "prop-types";
+import React from "react";
 
-const Button = (props) => {
+type ButtonProps = {
+  type: "button" | "link";
+  onClick?: () => void;
+  href?: string;
+  target?: string;
+  className?: string;
+  isDisabled?: boolean;
+  isPrimary?: boolean;
+  isLight?: boolean;
+  isLoading?: boolean;
+  isSmall?: boolean;
+  isLarge?: boolean;
+  isBlock?: boolean;
+  isExternal?: boolean;
+  hasShadow?: boolean;
+  style?: React.CSSProperties;
+};
+
+const Button: React.FC<ButtonProps> = (props) => {
   const className = [props.className];
   if (props.isPrimary) className.push("btn-primary");
   if (props.isLight) className.push("btn-light");
@@ -47,7 +64,7 @@ const Button = (props) => {
     } else {
       return (
         <Link
-          to={props.href}
+          to={props.href ?? "#"}
           className={className.join(" ")}
           style={props.style}
           onClick={onClick}
@@ -67,23 +84,6 @@ const Button = (props) => {
       {props.children}
     </button>
   );
-};
-
-Button.propTypes = {
-  type: propTypes.oneOf(["button", "link"]),
-  onClick: propTypes.func,
-  href: propTypes.string,
-  target: propTypes.string,
-  className: propTypes.string,
-  isDisabled: propTypes.bool,
-  isPrimary: propTypes.bool,
-  isLight: propTypes.bool,
-  isLoading: propTypes.bool,
-  isSmall: propTypes.bool,
-  isLarge: propTypes.bool,
-  isBlock: propTypes.bool,
-  isExternal: propTypes.bool,
-  hasShadow: propTypes.bool,
 };
 
 export default Button;
