@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-import NavBar from "../components/navBar";
-import Footer from "../components/footer";
-import Breadcrumb from "../components/breadcrumb";
-import Pagination from "../components/common/pagination";
-import ListGenre from "../components/common/listGenre";
-import ListBuku from "../components/common/listBuku";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import Breadcrumb from "../components/Breadcrumb";
+import Pagination from "../components/common/Pagination";
+import ListGenre from "../components/common/ListGenre";
+import ListBuku from "../components/common/ListBuku";
 
 import { getBooks } from "../services/BookService";
 import { getGenres } from "../services/GenreService";

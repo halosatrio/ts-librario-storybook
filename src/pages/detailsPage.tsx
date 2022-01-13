@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
 import { connect } from "react-redux";
 
-import NavBar from "../components/navBar";
-import Breadcrumb from "../components/breadcrumb";
-import Footer from "../components/footer";
-import BannerKatalog from "../components/bannerKatalog";
-import TitleText from "../components/common/titleText";
-import BookImage from "../components/bookImage";
-import BookDetail from "../components/bookDetail";
-import BookingForm from "../components/bookingForm";
+import NavBar from "../components/NavBar";
+import Breadcrumb from "../components/Breadcrumb";
+import Footer from "../components/Footer";
+import BannerKatalog from "../components/BannerKatalog";
+import TitleText from "../components/common/TitleText";
+import BookImage from "../components/BookImage";
+import BookDetail from "../components/BookDetail";
+import BookingForm from "../components/BookingForm";
 
 import { getBook } from "../services/BookService";
 

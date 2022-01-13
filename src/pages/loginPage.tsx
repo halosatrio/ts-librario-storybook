@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import NavBar from "../components/navBar";
-import LoginForm from "../components/loginForm";
+import NavBar from "../components/NavBar";
+import LoginForm from "../components/LoginForm";
 
 class LoginPage extends Component {
   state = {

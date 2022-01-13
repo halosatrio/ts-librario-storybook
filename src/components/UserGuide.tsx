@@ -1,7 +1,7 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
 
-import Button from "./common/button";
+import Button from "./common/Button";
 
 const UserGuide = () => {
   return (

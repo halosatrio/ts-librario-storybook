@@ -1,5 +1,4 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import LandingPage from "./pages/landingPage";
 import DetailsPage from "./pages/detailsPage";
@@ -13,17 +12,17 @@ import RegisterPage from "./pages/registerPage";
 
 function App() {
   return (
-    <div className="App">
-      <Router basename={process.env.PUBLIC_URL}>
-        <Route exact path="/" component={LandingPage}></Route>
-        <Route exact path="/books/:id" component={DetailsPage}></Route>
-        <Route exact path="/catalogue" component={KatalogPage}></Route>
-        <Route exact path="/user-guide" component={UserGuidePage}></Route>
-        <Route exact path="/checkout/:id" component={CheckoutPage}></Route>
-        <Route exact path="/login" component={LoginPage}></Route>
-        <Route exact path="/register" component={RegisterPage}></Route>
-      </Router>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={LandingPage}></Route>
+        <Route path="/books/:id" element={DetailsPage}></Route>
+        <Route path="/catalogue" element={KatalogPage}></Route>
+        <Route path="/user-guide" element={UserGuidePage}></Route>
+        <Route path="/checkout/:id" element={CheckoutPage}></Route>
+        <Route path="/login" element={LoginPage}></Route>
+        <Route path="/register" element={RegisterPage}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

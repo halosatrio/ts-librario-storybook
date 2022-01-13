@@ -1,9 +1,9 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
 
-import InputText from "./common/inputText";
-import InputFile from "./common/inputFile";
-import Button from "./common/button";
+import InputText from "./common/InputText";
+import InputFile from "./common/InputFile";
+import Button from "./common/Button";
 
 import items from "../json/paymentItems.json";
 

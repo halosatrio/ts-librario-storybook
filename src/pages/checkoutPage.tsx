@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import NavBar from "../components/navBar";
-import TitleText from "../components/common/titleText";
-import BookingInformation from "../components/bookingInformation";
-import Button from "../components/common/button";
+import NavBar from "../components/NavBar";
+import TitleText from "../components/common/TitleText";
+import BookingInformation from "../components/BookingInformation";
+import Button from "../components/common/Button";
 
 import { getBook } from "../services/BookService";
 

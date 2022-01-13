@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
 
-import NavBar from "../components/navBar";
-import Footer from "../components/footer";
-import UserGuide from "../components/userGuide";
-import Breadcrumb from "../components/breadcrumb";
-import TitleText from "../components/common/titleText";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import UserGuide from "../components/UserGuide";
+import Breadcrumb from "../components/Breadcrumb";
+import TitleText from "../components/common/TitleText";
 
 class UserGuidePage extends Component {
   componentDidMount() {

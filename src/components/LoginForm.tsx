@@ -1,8 +1,8 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
 
-import InputText from "./common/inputText";
-import Button from "./common/button";
+import InputText from "./common/InputText";
+import Button from "./common/Button";
 
 import heroImg from "../assets/images/hero2.jpeg";
 

@@ -3,8 +3,8 @@ import propTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 
-import Button from "./common/button";
-import InputDate from "./common/inputDate";
+import Button from "./common/Button";
+import InputDate from "./common/InputDate";
 
 class BookingForm extends Component {
   constructor(props) {
@@ -70,9 +70,9 @@ class BookingForm extends Component {
               {data.ketersediaan}
             </span>{" "}
             untuk
-            {`${startDate
+            {`${startDate.toDateString().slice(3, 10)} - ${endDate
               .toDateString()
-              .slice(3, 10)} - ${endDate.toDateString().slice(3, 10)}`}
+              .slice(3, 10)}`}
           </h6>
           <h6 className="text-gray-600 font-weight-light mb-4">
             Droppping Point: Spasso Cafe
