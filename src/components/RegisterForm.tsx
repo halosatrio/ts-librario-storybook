@@ -7,7 +7,17 @@ import Button from "./common/Button";
 
 import items from "../json/paymentItems.json";
 
-const RegisterForm = (props) => {
+type RegisterProps = {
+  onChange: () => void;
+  data: {
+    name: string;
+    email: string;
+    password: string;
+    proofPayment: any;
+  };
+};
+
+const RegisterForm = (props: RegisterProps) => {
   const { data } = props;
 
   return (

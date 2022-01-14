@@ -1,12 +1,10 @@
-import React from "react";
-
 import Button from "./common/Button";
 
-const IconText = (props) => {
-  const className = ["brand-text-icon", props.className];
+const IconText = (props: { className?: string }) => {
+  const classNames = ["brand-text-icon", props.className];
 
   return (
-    <Button className={className.join(" ")} href="" type="link">
+    <Button className={classNames.join(" ")} href="" type="link">
       Librario
     </Button>
   );

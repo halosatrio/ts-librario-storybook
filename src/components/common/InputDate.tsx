@@ -8,7 +8,7 @@ import iconCalendar from "../../assets/images/icon-calendar.svg";
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 type InputDateProps = {
-  startDate: Date;
+  startDate: Date | null;
   setDate: (date: Date | null) => void;
   name: string;
 };

@@ -1,4 +1,3 @@
-import React from "react";
 import IconText from "./IconText";
 import Button from "./common/Button";
 

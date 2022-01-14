@@ -1,9 +1,28 @@
-import React from "react";
 import Fade from "react-reveal/Fade";
 
 import Button from "./common/Button";
 
-const PilihanBuku = ({ data }) => {
+interface DataBuku {
+  _id: string;
+  isbn: string;
+  judul: string;
+  bahasa: string;
+  genre: { _id: string; name: string };
+  penulis: string;
+  penerbit: string;
+  kondisi: string;
+  ketersediaan: string;
+  imageUrl: string;
+  isPopular: boolean;
+  kode: string;
+}
+
+type PilihanBukuData = {
+  name: string;
+  items: Array<DataBuku>;
+};
+
+const PilihanBuku = (data: Array<PilihanBukuData>) => {
   return data.map((pilihan, index1) => {
     return (
       <section key={`pilihan=${index1}`} className="container mb-5">

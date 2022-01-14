@@ -10,7 +10,7 @@ import BannerKatalog from "../components/BannerKatalog";
 import landingPage from "../json/landingPage.json";
 
 const LandingPage = () => {
-  const refPilihanBuku = useRef(null);
+  const refPilihanBuku = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -18,7 +18,7 @@ const LandingPage = () => {
 
   return (
     <>
-      <NavBar {...this.props} />
+      <NavBar {...props} />
       <Jumbotron refPilihanBuku={refPilihanBuku} />
       <RekomendasiBuku
         refPilihanBuku={refPilihanBuku}

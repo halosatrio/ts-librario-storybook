@@ -1,7 +1,7 @@
 import { useRef } from "react";
-import propTypes from "prop-types";
 
 type InputFileProps = {
+  id: string;
   name: string;
   accept: string;
   value: string;
@@ -14,6 +14,7 @@ type InputFileProps = {
 };
 
 const InputFile = ({
+  id,
   value,
   placeholder = "Browse a file...",
   name,
@@ -35,6 +36,7 @@ const InputFile = ({
           </div>
         )}
         <input
+          id={id}
           accept={accept}
           ref={refInputFile}
           name={name}
@@ -44,6 +46,7 @@ const InputFile = ({
           onChange={onChange}
         />
         <input
+          id={id}
           onClick={() => refInputFile.current?.click()}
           defaultValue={value}
           placeholder={placeholder}

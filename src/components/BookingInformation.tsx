@@ -1,11 +1,20 @@
-import React from "react";
 import Fade from "react-reveal/Fade";
 
 import InputText from "./common/InputText";
 
-const BookingInformation = (props) => {
-  const { checkoutData, book, checkout } = props;
+type BookingInformationProps = {
+  checkoutData: { name: string; email: string; phone: string };
+  book: any;
+  checkout: any;
+  onChange: () => void;
+};
 
+const BookingInformation = ({
+  checkoutData,
+  book,
+  checkout,
+  onChange,
+}: BookingInformationProps) => {
   return (
     <div className="container">
       <div
@@ -56,7 +65,7 @@ const BookingInformation = (props) => {
               id="name"
               name="name"
               value={checkoutData.name}
-              onChange={props.onChange}
+              onChange={onChange}
             />
 
             <label htmlFor="email">Alamat Email</label>
@@ -65,7 +74,7 @@ const BookingInformation = (props) => {
               name="email"
               type="email"
               value={checkoutData.email}
-              onChange={props.onChange}
+              onChange={onChange}
             />
 
             <label htmlFor="phone">Nomor Telepon</label>
@@ -74,7 +83,7 @@ const BookingInformation = (props) => {
               name="phone"
               type="tel"
               value={checkoutData.phone}
-              onChange={props.onChange}
+              onChange={onChange}
             />
           </Fade>
         </div>

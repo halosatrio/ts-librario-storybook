@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import propTypes from "prop-types";
+import { useState } from "react";
 
 type InputTextProps = {
+  id: string;
   name: string;
   value: number | string;
-  errorResponse: string;
+  errorResponse?: string;
   onChange: (target: { name: string; value: string }) => void;
   prepend?: number | string;
   append?: number | string;
@@ -14,11 +14,18 @@ type InputTextProps = {
   inputClassName?: string;
 };
 
-const InputText = ({
-  value,
+const defaultProps = {
   type = "text",
   placeholder = "Please type here...",
   errorResponse = "Please match the requested format.",
+};
+
+const InputText = ({
+  id,
+  value,
+  type,
+  placeholder,
+  errorResponse,
   name,
   onChange,
   prepend,
@@ -62,6 +69,7 @@ const InputText = ({
           </div>
         )}
         <input
+          id={id}
           name={name}
           type={type}
           pattern={pattern.toString()}
@@ -80,5 +88,7 @@ const InputText = ({
     </div>
   );
 };
+
+InputText.defaultProps = defaultProps;
 
 export default InputText;

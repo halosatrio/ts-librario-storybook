@@ -1,4 +1,3 @@
-import React from "react";
 import Fade from "react-reveal/Fade";
 
 import InputText from "./common/InputText";
@@ -6,7 +5,15 @@ import Button from "./common/Button";
 
 import heroImg from "../assets/images/hero2.jpeg";
 
-const LoginForm = (props) => {
+type LoginFormProps = {
+  data: {
+    email: string;
+    password: string;
+  };
+  onChange: () => void;
+};
+
+const LoginForm = (props: LoginFormProps) => {
   const { data } = props;
 
   return (

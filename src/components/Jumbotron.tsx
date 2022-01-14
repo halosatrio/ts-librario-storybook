@@ -1,4 +1,3 @@
-import React from "react";
 import Fade from "react-reveal/Fade";
 
 import Button from "./common/Button";
@@ -8,10 +7,12 @@ import iconBook from "../assets/images/icon-book.png";
 import iconHouse from "../assets/images/icon-house.png";
 import iconSocial from "../assets/images/icon-social.png";
 
-const Jumbotron = (props) => {
+const Jumbotron = (
+  refPilihanBuku: React.MutableRefObject<HTMLInputElement>
+) => {
   function showPilihanBuku() {
     window.scrollTo({
-      top: props.refPilihanBuku.current.offsetTop - 30,
+      top: refPilihanBuku.current.offsetTop - 30,
       behavior: "smooth",
     });
   }
