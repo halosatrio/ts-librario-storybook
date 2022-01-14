@@ -2,7 +2,9 @@ import Fade from "react-reveal/Fade";
 
 import Button from "./Button";
 
-const ListBuku = ({ items }) => {
+import { BooksData } from "../../types/Books";
+
+const ListBuku = (items: Array<BooksData>) => {
   return (
     <Fade>
       <div className="row row-cols-2 row-cols-sm-3 row-cols-lg-5">

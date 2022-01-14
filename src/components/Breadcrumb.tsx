@@ -1,11 +1,11 @@
 import Button from "./common/Button";
 
-type BreadcrumbData = {
+type BreadcrumbData = Array<{
   pageTitle: string;
   pageHref: string;
-};
+}>;
 
-const Breadcrumb = (data: Array<BreadcrumbData>) => {
+const Breadcrumb = (data: BreadcrumbData) => {
   return (
     <div className="container my-4">
       <nav aria-label="breadcrumb">

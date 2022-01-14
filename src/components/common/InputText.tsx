@@ -4,7 +4,7 @@ type InputTextProps = {
   id: string;
   name: string;
   value: number | string;
-  errorResponse?: string;
+  errorResponse: string;
   onChange: (target: { name: string; value: string }) => void;
   prepend?: number | string;
   append?: number | string;
@@ -15,9 +15,9 @@ type InputTextProps = {
 };
 
 const defaultProps = {
-  type = "text",
-  placeholder = "Please type here...",
-  errorResponse = "Please match the requested format.",
+  type: "text",
+  placeholder: "Please type here...",
+  errorResponse: "Please match the requested format.",
 };
 
 const InputText = ({
@@ -40,12 +40,10 @@ const InputText = ({
   if (type === "email") pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (type === "tel") pattern = /"[0-9]*"/;
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = {
-      target: {
-        name: name,
-        value: event.target.value,
-      },
+      name: name,
+      value: event.target.value,
     };
 
     if (type === "email") {

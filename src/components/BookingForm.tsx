@@ -6,9 +6,21 @@ import Fade from "react-reveal/Fade";
 import Button from "./common/Button";
 import InputDate from "./common/InputDate";
 
-const BookingForm = ({data}) => {
-  const [startDate, setstartDate] = useState<Date | null>(new Date());
-  const [endDate, setendDate] = useState<Date | null>(new Date());
+type BookingData = {
+  _id?: string;
+  isbn?: string;
+  judul?: string;
+  genre?: string;
+  penulis?: string;
+  penerbit?: string;
+  kondisi?: string;
+  ketersediaan?: string;
+  imageUrl?: string;
+};
+
+const BookingForm = (data: BookingData) => {
+  const [startDate, setstartDate] = useState<Date>(new Date());
+  const [endDate, setendDate] = useState<Date>(new Date());
 
   // Hooks
   useEffect(() => {
@@ -25,9 +37,7 @@ const BookingForm = ({data}) => {
     setendDate(handleAddDate(date, 14));
   };
 
-  const handleStartBooking = () => {
-
-  }
+  const handleStartBooking = () => {};
   startBooking = () => {
     const { startDate, endDate } = this.state;
     this.props.startBooking({
@@ -39,96 +49,51 @@ const BookingForm = ({data}) => {
     });
     this.props.history.push(`/checkout/${this.props.data._id}`);
   };
-  
+
+  console.log(`RENDER - start: ${startDate}, end: ${endDate}`);
 
   return (
     <Fade delay={500}>
-        <div className="card bordered" style={{ padding: "30px 30px" }}>
-          <h4 className="mb-4">Pinjam Sekarang</h4>
-          <label htmlFor="date">Pilih tanggal</label>
-          <InputDate
-            name="date"
-            startDate={startDate}
-            setDate={handleUpdateDate}
-          />
-          <h6 className="text-gray-600 font-weight-light mb-3">
-            Buku{" "}
-            <span
-              className={`mt-3 badge font-weight-normal ${
-                data.ketersediaan === "Tersedia" ? "badge-info" : "badge-danger"
-              }`}
-              style={{ fontSize: 14 }}
-            >
-              {data.ketersediaan}
-            </span>{" "}
-            untuk
-            {`${startDate.toDateString().slice(3, 10)} - ${endDate
-              .toDateString()
-              .slice(3, 10)}`}
-          </h6>
-          <h6 className="text-gray-600 font-weight-light mb-4">
-            Droppping Point: Spasso Cafe
-          </h6>
-          <Button
-            type="button"
-            className="btn"
-            isPrimary
-            hasShadow
-            onClick={this.startBooking}
+      <div className="card bordered" style={{ padding: "30px 30px" }}>
+        <h4 className="mb-4">Pinjam Sekarang</h4>
+        <label htmlFor="date">Pilih tanggal</label>
+        <InputDate
+          name="date"
+          startDate={startDate}
+          setDate={handleUpdateDate}
+        />
+        <h6 className="text-gray-600 font-weight-light mb-3">
+          Buku{" "}
+          <span
+            className={`mt-3 badge font-weight-normal ${
+              data.ketersediaan === "Tersedia" ? "badge-info" : "badge-danger"
+            }`}
+            style={{ fontSize: 14 }}
           >
-            Pinjam Buku
-          </Button>
-        </div>
-      </Fade>
+            {data.ketersediaan}
+          </span>{" "}
+          untuk
+          {`${startDate.toDateString().slice(3, 10)} - ${endDate
+            .toDateString()
+            .slice(3, 10)}`}
+        </h6>
+        <h6 className="text-gray-600 font-weight-light mb-4">
+          Droppping Point: Spasso Cafe
+        </h6>
+        <Button
+          type="button"
+          className="btn"
+          isPrimary
+          hasShadow
+          onClick={handleStartBooking}
+        >
+          Pinjam Buku
+        </Button>
+      </div>
+    </Fade>
   );
 };
 export default BookingForm;
-
-class BookingForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      startDate: new Date(),
-      endDate: new Date(),
-    };
-  }
-
-  addDays = (date, days) => {
-    let result = new Date(date);
-    result.setDate(result.getDate() + days);
-    return result;
-  };
-
-  updateDate = (date) => {
-    this.setState({ startDate: date, endDate: this.addDays(date, 14) });
-  };
-
-  componentDidMount() {
-    this.setState({
-      ...this.state,
-      endDate: this.addDays(new Date(), 14),
-    });
-  }
-
-  
-
-  render() {
-    const { data } = this.props;
-    const { startDate, endDate } = this.state;
-
-    console.log(`RENDER - start: ${startDate}, end: ${endDate}`);
-    return (
-      
-    );
-  }
-}
-
-BookingForm.propTypes = {
-  data: propTypes.object,
-  startBooking: propTypes.func,
-};
-
-export default withRouter(BookingForm);
 
 // const BookingForm = ({ data }) => {
 //   const [date, setDate] = useState({

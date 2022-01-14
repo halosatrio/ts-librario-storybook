@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Fade from "react-reveal/Fade";
 
+import { BooksGenre } from "../../types/Books";
+
 type ListGenreProps = {
-  items: any;
+  items: Array<BooksGenre>;
   onItemSelect: any;
   selectedItem: any;
 };

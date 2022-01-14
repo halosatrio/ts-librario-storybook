@@ -4,10 +4,17 @@ import Fade from "react-reveal/Fade";
 import Button from "./common/Button";
 
 type RekomendasiProps = {
-  refPilihanBuku: <>;
+  refPilihanBuku: any;
+  data: Array<{
+    _id: string;
+    genre: { _id: string; name: string };
+    imageUrl: string;
+    judul: string;
+    penulis: string;
+  }>;
 };
 
-const RekomendasiBuku = (props) => {
+const RekomendasiBuku = (props: RekomendasiProps) => {
   return (
     <section className="container mb-4" ref={props.refPilihanBuku}>
       <Fade>
