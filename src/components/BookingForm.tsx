@@ -18,7 +18,7 @@ type BookingData = {
   imageUrl?: string;
 };
 
-const BookingForm = (data: BookingData) => {
+const BookingForm = ({ data }: { data: BookingData }) => {
   const [startDate, setstartDate] = useState<Date>(new Date());
   const [endDate, setendDate] = useState<Date>(new Date());
 

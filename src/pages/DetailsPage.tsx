@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 import { connect } from "react-redux";
 
@@ -15,82 +16,57 @@ import { getBook } from "../services/BookService";
 
 import { checkoutBooking } from "../store/actions/checkout";
 
-class DetailsPage extends Component {
-  state = {
-    data: {
-      _id: "",
-      isbn: "",
-      judul: "",
-      genre: "",
-      penulis: "",
-      penerbit: "",
-      kondisi: "",
-      ketersediaan: "",
-      imageUrl: "",
-    },
-  };
+const DetailsPage = () => {
+  const pathname = useLocation().pathname;
 
-  componentDidMount() {
-    window.title = "Librario | Detail Buku";
+  const [data, setData] = useState({
+    _id: "",
+    isbn: "",
+    judul: "",
+    genre: "",
+    penulis: "",
+    penerbit: "",
+    kondisi: "",
+    ketersediaan: "",
+    imageUrl: "",
+  });
+  useEffect(() => {
+    document.title = "Librario | Detail Buku";
     window.scrollTo(0, 0);
 
-    const bookId = this.props.match.params.id;
+    const bookId = pathname.split("/")[2];
 
     const book = getBook(bookId);
+  }, []);
 
-    this.setState({ data: this.mapToViewModel(book) });
-  }
+  const breadcrumb = [
+    { pageTitle: "Home", pageHref: "/" },
+    { pageTitle: "Detail Buku", pageHref: "" },
+  ];
 
-  mapToViewModel(book) {
-    return {
-      _id: book._id,
-      genre: book.genre.name,
-      isbn: book.isbn,
-      judul: book.judul,
-      penulis: book.penulis,
-      penerbit: book.penerbit,
-      kondisi: book.kondisi,
-      ketersediaan: book.ketersediaan,
-      imageUrl: book.imageUrl,
-    };
-  }
-
-  render() {
-    const breadcrumb = [
-      { pageTitle: "Home", pageHref: "/" },
-      { pageTitle: "Detail Buku", pageHref: "" },
-    ];
-
-    const { data } = this.state;
-
-    return (
-      <>
-        <NavBar {...this.props} />
-        <Breadcrumb data={breadcrumb} />
-        <TitleText isBold>{data.judul}</TitleText>
-        <Fade delay={300}>
-          <section className="container mb-5">
-            <div className="row justify-content-around">
-              <div className="col-10 col-md-6 col-lg-6 col-xl-5 mb-4">
-                <BookImage data={data} />
-              </div>
-              <div className="deskripsi-buku col-11 col-md-6 col-lg-6 col-xl-5">
-                <BookDetail data={data} />
-                <BookingForm
-                  data={data}
-                  startBooking={this.props.checkoutBooking}
-                />
-              </div>
+  return (
+    <>
+      <NavBar />
+      <Breadcrumb data={breadcrumb} />
+      <TitleText isBold>{data.judul}</TitleText>
+      <Fade delay={300}>
+        <section className="container mb-5">
+          <div className="row justify-content-around">
+            <div className="col-10 col-md-6 col-lg-6 col-xl-5 mb-4">
+              <BookImage data={data} />
             </div>
-          </section>
-        </Fade>
-        {/* <PilihanBuku data={itemDetails.pilihanBuku} /> */}
-        <BannerKatalog />
-        <Footer />
-      </>
-    );
-  }
-}
+            <div className="deskripsi-buku col-11 col-md-6 col-lg-6 col-xl-5">
+              <BookDetail data={data} />
+              <BookingForm data={data} startBooking={checkoutBooking} />
+            </div>
+          </div>
+        </section>
+      </Fade>
+      {/* <PilihanBuku data={itemDetails.pilihanBuku} /> */}
+      <BannerKatalog />
+      <Footer />
+    </>
+  );
+};
 
-export default connect(null, { checkoutBooking })(DetailsPage);
-// export default DetailsPage;
+export default DetailsPage;

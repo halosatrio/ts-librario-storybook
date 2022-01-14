@@ -1,8 +1,10 @@
-const TitleText = (
-  className: string,
-  isBold: boolean,
-  children: React.ReactNode
-) => {
+type TitleTextProps = {
+  className?: string;
+  isBold: boolean;
+  children: React.ReactNode;
+};
+
+const TitleText = ({ className, isBold, children }: TitleTextProps) => {
   let classNames = [className];
   if (isBold) classNames.push("font-weight-bold");
 

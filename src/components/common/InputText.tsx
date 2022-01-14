@@ -5,7 +5,7 @@ type InputTextProps = {
   name: string;
   value: number | string;
   errorResponse: string;
-  onChange: (target: { name: string; value: string }) => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   prepend?: number | string;
   append?: number | string;
   type?: string;
@@ -41,20 +41,15 @@ const InputText = ({
   if (type === "tel") pattern = /"[0-9]*"/;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const target = {
-      name: name,
-      value: event.target.value,
-    };
-
     if (type === "email") {
       if (!pattern.test(event.target.value)) setHasError(errorResponse);
       else setHasError(null);
     }
 
     if (type === "tel") {
-      if (event.target.validity.valid) onChange(target);
+      if (event.target.validity.valid) onChange(event);
     } else {
-      onChange(target);
+      onChange(event);
     }
   };
 

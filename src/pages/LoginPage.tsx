@@ -1,45 +1,32 @@
-import React, { Component } from "react";
+import { useEffect, useState } from "react";
 
 import NavBar from "../components/NavBar";
 import LoginForm from "../components/LoginForm";
 
 const LoginPage = () => {
-  return <div></div>;
-};
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
 
-export default LoginPage;
-
-class LoginPage extends Component {
-  state = {
-    data: {
-      email: "",
-      password: "",
-    },
-  };
-
-  onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({
-      data: {
-        ...this.state.data,
-        [event.target.name]: event.target.value,
-      },
-    });
-  };
-
-  componentDidMount() {
+  useEffect(() => {
     window.scroll(0, 0);
-  }
+  }, []);
 
-  render() {
-    const { data } = this.state;
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
 
-    return (
-      <>
-        <NavBar isCentered />
-        <LoginForm data={data} onChange={this.onChange} />
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <NavBar isCentered={true} />
+      <LoginForm data={data} onChange={handleChange} />
+    </>
+  );
+};
 
 export default LoginPage;

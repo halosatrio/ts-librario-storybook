@@ -1,14 +1,13 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import IcontText from "./IconText";
 import Button from "./common/Button";
 
-type NavbarProps = {
-  location: { pathname: string };
-  isCentered: boolean;
-};
+const defaultProps = { isCentered: false };
 
-const NavBar = ({ location, isCentered }: NavbarProps) => {
+const NavBar = ({ isCentered }: { isCentered: boolean }) => {
+  let location = useLocation();
   const [collapsed, setCollapsed] = useState(true);
   const handleToggleNavbar = () => {
     setCollapsed(!collapsed);
@@ -79,5 +78,7 @@ const NavBar = ({ location, isCentered }: NavbarProps) => {
     </nav>
   );
 };
+
+NavBar.defaultProps = defaultProps;
 
 export default NavBar;

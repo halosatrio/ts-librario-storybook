@@ -10,7 +10,7 @@ type LoginFormProps = {
     email: string;
     password: string;
   };
-  onChange: () => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const LoginForm = (props: LoginFormProps) => {

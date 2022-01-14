@@ -110,7 +110,7 @@ const books = [
     kondisi: "Baik",
     ketersediaan: "Tidak Tersedia",
     imageUrl: "/images/self-help-berdamai-diri-sendiri.jpg",
-    isPopulas: false,
+    isPopular: false,
     kode: "H",
   },
   {
@@ -278,7 +278,7 @@ const books = [
     kondisi: "Baik",
     ketersediaan: "Tersedia",
     imageUrl: "/images/self-help-how-to-be-interesting.jpg",
-    isPopulas: false,
+    isPopular: false,
     kode: "H",
   },
   {
@@ -461,7 +461,7 @@ const books = [
     kondisi: "Baik",
     ketersediaan: "Tersedia",
     imageUrl: "/images/self-help-bodo-amat.jpg",
-    isPopulas: true,
+    isPopular: true,
     kode: "H",
   },
   {
@@ -498,27 +498,6 @@ export function getBooks() {
   return books;
 }
 
-export function getBook(id) {
+export function getBook(id: string) {
   return books.find((m) => m._id === id);
-}
-
-export function saveBook(book) {
-  let bookInDb = books.find((m) => m._id === book._id) || {};
-  bookInDb.title = book.title;
-  bookInDb.genre = genresAPI.genres.find((g) => g._id === book.genreId);
-  bookInDb.numberInStock = book.numberInStock;
-  bookInDb.dailyRentalRate = book.dailyRentalRate;
-
-  if (!bookInDb._id) {
-    bookInDb._id = Date.now().toString;
-    books.push(bookInDb);
-  }
-
-  return bookInDb;
-}
-
-export function deleteBook(id) {
-  let bookInDb = books.find((m) => m._id === id);
-  books.splice(books.indexOf(bookInDb), 1);
-  return bookInDb;
 }

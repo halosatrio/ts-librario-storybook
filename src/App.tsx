@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import LandingPage from "./pages/LandingPage";
-import DetailsPage from "./pages/detailsPage";
-import UserGuidePage from "./pages/userGuidePage";
-import KatalogPage from "./pages/katalogPage";
-import CheckoutPage from "./pages/checkoutPage";
-import LoginPage from "./pages/loginPage";
-import RegisterPage from "./pages/registerPage";
+import DetailsPage from "./pages/DetailsPage";
+import UserGuidePage from "./pages/UserGuidePage";
+import KatalogPage from "./pages/KatalogPage";
+import CheckoutPage from "./pages/CheckoutPage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 // import "./assets/scss/style.scss";
 

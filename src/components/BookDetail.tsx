@@ -7,7 +7,7 @@ type BookData = {
   kondisi: string;
 };
 
-const BookDetail = (data: BookData) => {
+const BookDetail = ({ data }: { data: BookData }) => {
   return (
     <>
       <h3 className="mb-4 text-gray-800">Detail Buku</h3>

@@ -5,7 +5,7 @@ type InputFileProps = {
   name: string;
   accept: string;
   value: string;
-  onChange?: () => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   prepend?: number | string;
   append?: number | string;
   placeholder?: string;

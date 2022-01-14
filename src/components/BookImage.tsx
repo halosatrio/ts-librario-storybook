@@ -1,12 +1,12 @@
 type BookDataImage = {
   imageUrl: string;
-  Judul: string;
+  judul: string;
 };
 
-const BookImage = (data: BookDataImage) => {
+const BookImage = ({ data }: { data: BookDataImage }) => {
   return (
     <figure>
-      <img src={data.imageUrl} className="img-fluid" alt={data.Judul} />
+      <img src={data.imageUrl} className="img-fluid" alt={data.judul} />
       <figcaption className="figure-caption">Cover depan</figcaption>
     </figure>
   );

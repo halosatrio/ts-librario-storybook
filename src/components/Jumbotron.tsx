@@ -7,12 +7,16 @@ import iconBook from "../assets/images/icon-book.png";
 import iconHouse from "../assets/images/icon-house.png";
 import iconSocial from "../assets/images/icon-social.png";
 
-const Jumbotron = (
-  refPilihanBuku: React.MutableRefObject<HTMLInputElement>
-) => {
+const Jumbotron = ({
+  refPilihanBuku,
+}: {
+  refPilihanBuku: React.MutableRefObject<HTMLInputElement | undefined>;
+}) => {
   function showPilihanBuku() {
     window.scrollTo({
-      top: refPilihanBuku.current.offsetTop - 30,
+      top: refPilihanBuku?.current?.offsetTop
+        ? refPilihanBuku.current.offsetTop - 30
+        : 0,
       behavior: "smooth",
     });
   }

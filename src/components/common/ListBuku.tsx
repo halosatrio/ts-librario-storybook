@@ -4,11 +4,11 @@ import Button from "./Button";
 
 import { BooksData } from "../../types/Books";
 
-const ListBuku = (items: Array<BooksData>) => {
+const ListBuku = ({ items }: { items: Array<BooksData> | undefined }) => {
   return (
     <Fade>
       <div className="row row-cols-2 row-cols-sm-3 row-cols-lg-5">
-        {items.map((book) => {
+        {items?.map((book) => {
           return (
             <div
               key={book._id}

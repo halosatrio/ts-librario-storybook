@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
@@ -10,7 +10,7 @@ import BannerKatalog from "../components/BannerKatalog";
 import landingPage from "../json/landingPage.json";
 
 const LandingPage = () => {
-  const refPilihanBuku = useRef<HTMLInputElement | null>(null);
+  const refPilihanBuku = useRef<HTMLInputElement>();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -18,7 +18,7 @@ const LandingPage = () => {
 
   return (
     <>
-      <NavBar {...props} />
+      <NavBar />
       <Jumbotron refPilihanBuku={refPilihanBuku} />
       <RekomendasiBuku
         refPilihanBuku={refPilihanBuku}

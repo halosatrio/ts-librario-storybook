@@ -8,7 +8,7 @@ import Button from "./common/Button";
 import items from "../json/paymentItems.json";
 
 type RegisterProps = {
-  onChange: () => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   data: {
     name: string;
     email: string;
