@@ -3,6 +3,12 @@ import React, { Component } from "react";
 import NavBar from "../components/NavBar";
 import LoginForm from "../components/LoginForm";
 
+const LoginPage = () => {
+  return <div></div>;
+};
+
+export default LoginPage;
+
 class LoginPage extends Component {
   state = {
     data: {
@@ -11,7 +17,7 @@ class LoginPage extends Component {
     },
   };
 
-  onChange = (event) => {
+  onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({
       data: {
         ...this.state.data,
