@@ -14,7 +14,7 @@ import BookingForm from "../components/BookingForm";
 
 import { getBook } from "../services/BookService";
 
-import { checkoutBooking } from "../store/actions/checkout";
+import { checkoutBooking } from "../store/checkout/action";
 
 const DetailsPage = () => {
   const pathname = useLocation().pathname;
@@ -57,7 +57,7 @@ const DetailsPage = () => {
             </div>
             <div className="deskripsi-buku col-11 col-md-6 col-lg-6 col-xl-5">
               <BookDetail data={data} />
-              <BookingForm data={data} startBooking={checkoutBooking} />
+              <BookingForm data={data} />
             </div>
           </div>
         </section>

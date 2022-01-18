@@ -2,11 +2,13 @@ import Fade from "react-reveal/Fade";
 
 import InputText from "./common/InputText";
 
+import { CheckoutPayload } from "../types/CheckoutPayload";
+
 type BookingInformationProps = {
   checkoutData: { name: string; email: string; phone: string };
   book: any;
-  checkout: any;
-  onChange: () => void;
+  checkout: CheckoutPayload;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const BookingInformation = ({

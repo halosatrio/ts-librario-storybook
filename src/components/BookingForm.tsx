@@ -1,10 +1,14 @@
-import React, { Component, useEffect, useState } from "react";
-import propTypes from "prop-types";
-import { withRouter } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
+
 import Fade from "react-reveal/Fade";
 
 import Button from "./common/Button";
 import InputDate from "./common/InputDate";
+
+import { checkoutBooking } from "../store/checkout/action";
+import { CheckoutPayload } from "../types/CheckoutPayload";
 
 type BookingData = {
   _id?: string;
@@ -22,6 +26,8 @@ const BookingForm = ({ data }: { data: BookingData }) => {
   const [startDate, setstartDate] = useState<Date>(new Date());
   const [endDate, setendDate] = useState<Date>(new Date());
 
+  const dispatch = useDispatch();
+
   // Hooks
   useEffect(() => {
     setendDate(handleAddDate(new Date(), 14));
@@ -37,18 +43,21 @@ const BookingForm = ({ data }: { data: BookingData }) => {
     setendDate(handleAddDate(date, 14));
   };
 
-  const handleStartBooking = () => {};
-  startBooking = () => {
-    const { startDate, endDate } = this.state;
-    this.props.startBooking({
-      _id: this.props.data._id,
-      date: {
-        startDate: startDate,
-        endDate: endDate,
-      },
-    });
-    this.props.history.push(`/checkout/${this.props.data._id}`);
+  const handleStartBooking = () => {
+    return null;
   };
+
+  // startBooking = () => {
+  //   const { startDate, endDate } = this.state;
+  //   this.props.startBooking({
+  //     _id: this.props.data._id,
+  //     date: {
+  //       startDate: startDate,
+  //       endDate: endDate,
+  //     },
+  //   });
+  //   this.props.history.push(`/checkout/${this.props.data._id}`);
+  // };
 
   console.log(`RENDER - start: ${startDate}, end: ${endDate}`);
 
@@ -85,7 +94,7 @@ const BookingForm = ({ data }: { data: BookingData }) => {
           className="btn"
           isPrimary
           hasShadow
-          onClick={handleStartBooking}
+          onClick={() => {}}
         >
           Pinjam Buku
         </Button>

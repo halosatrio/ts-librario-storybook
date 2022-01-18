@@ -1,6 +1,6 @@
 type TitleTextProps = {
   className?: string;
-  isBold: boolean;
+  isBold?: boolean;
   children: React.ReactNode;
 };
 
