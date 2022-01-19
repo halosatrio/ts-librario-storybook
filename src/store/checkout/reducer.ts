@@ -1,12 +1,8 @@
-import { CHECKOUT_BOOKING } from "./action";
+import { CheckoutAction } from "./action";
+import { ActionType } from "./action";
 import { CheckoutPayload } from "../../types/CheckoutPayload";
 
-interface CHECKOUT_BOOKING {
-  type: "CHECKOUT_BOOKING";
-  payload: CheckoutPayload;
-}
-
-const initialState: CheckoutPayload = {
+const initialState = {
   _id: "",
   date: {
     startDate: new Date(),
@@ -15,11 +11,11 @@ const initialState: CheckoutPayload = {
 };
 
 export default function checkoutReducer(
-  state = initialState,
-  action: CHECKOUT_BOOKING
+  state: CheckoutPayload = initialState,
+  action: CheckoutAction
 ) {
   switch (action.type) {
-    case CHECKOUT_BOOKING:
+    case ActionType.CHECKOUT_BOOKING:
       return action.payload;
     default:
       return state;

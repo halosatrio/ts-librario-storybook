@@ -15,6 +15,7 @@ const NavBar = ({ isCentered }: { isCentered: boolean }) => {
 
   const getNavLinkClass = (path: string) => {
     return location.pathname === path ? " active" : "";
+    // return "";
   };
 
   const classOne = collapsed
@@ -33,6 +34,8 @@ const NavBar = ({ isCentered }: { isCentered: boolean }) => {
       </nav>
     );
   }
+
+  // console.log("getNavLink", getNavLinkClass("/"));
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light py-3">

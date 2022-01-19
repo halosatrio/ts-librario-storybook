@@ -1,4 +1,4 @@
-import * as genresAPI from "./GenreService";
+import { Params } from "react-router-dom";
 
 const books = [
   {
@@ -498,6 +498,6 @@ export function getBooks() {
   return books;
 }
 
-export function getBook(id: string) {
+export function getBook(id: string | Readonly<Params<string>>) {
   return books.find((m) => m._id === id);
 }

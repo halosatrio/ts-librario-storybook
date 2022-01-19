@@ -2,12 +2,18 @@ import { Dispatch } from "redux";
 
 import { CheckoutPayload } from "../../types/CheckoutPayload";
 
-export const CHECKOUT_BOOKING = "CHECKOUT_BOOKING";
+export enum ActionType {
+  CHECKOUT_BOOKING = "CHECKOUT_BOOKING",
+}
+export interface CheckoutAction {
+  type: ActionType.CHECKOUT_BOOKING;
+  payload: CheckoutPayload;
+}
 
 export const checkoutBooking =
-  (payload: CheckoutPayload) => (dispatch: Dispatch) => {
+  (payload: CheckoutPayload) => (dispatch: Dispatch<CheckoutAction>) => {
     dispatch({
-      type: CHECKOUT_BOOKING,
+      type: ActionType.CHECKOUT_BOOKING,
       payload: payload,
     });
   };

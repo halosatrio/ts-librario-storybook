@@ -35,7 +35,7 @@ const KatalogPage = () => {
         ? books?.filter((b) => b?.genre?._id === selectedGenre?._id)
         : books
     );
-  }, [selectedGenre]);
+  }, [books, selectedGenre]);
 
   useEffect(() => {
     setBooks(paginate(filtered, currentPage, pageSize));

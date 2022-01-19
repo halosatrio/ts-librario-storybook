@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Fade from "react-reveal/Fade";
-import { connect } from "react-redux";
 
 import NavBar from "../components/NavBar";
 import Breadcrumb from "../components/Breadcrumb";
@@ -17,7 +16,7 @@ import { getBook } from "../services/BookService";
 import { checkoutBooking } from "../store/checkout/action";
 
 const DetailsPage = () => {
-  const pathname = useLocation().pathname;
+  const params = useParams();
 
   const [data, setData] = useState({
     _id: "",
@@ -34,7 +33,7 @@ const DetailsPage = () => {
     document.title = "Librario | Detail Buku";
     window.scrollTo(0, 0);
 
-    const bookId = pathname.split("/")[2];
+    const bookId = params;
 
     const book = getBook(bookId);
   }, []);

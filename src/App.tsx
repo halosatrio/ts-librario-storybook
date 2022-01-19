@@ -12,15 +12,17 @@ import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={LandingPage}></Route>
-      <Route path="/books/:id" element={DetailsPage}></Route>
-      <Route path="/catalogue" element={KatalogPage}></Route>
-      <Route path="/user-guide" element={UserGuidePage}></Route>
-      <Route path="/checkout/:id" element={CheckoutPage}></Route>
-      <Route path="/login" element={LoginPage}></Route>
-      <Route path="/register" element={RegisterPage}></Route>
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />}></Route>
+        <Route path="/books/:id" element={<DetailsPage />}></Route>
+        <Route path="/catalogue" element={<KatalogPage />}></Route>
+        <Route path="/user-guide" element={<UserGuidePage />}></Route>
+        <Route path="/checkout/:id" element={<CheckoutPage />}></Route>
+        <Route path="/login" element={<LoginPage />}></Route>
+        <Route path="/register" element={<RegisterPage />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
