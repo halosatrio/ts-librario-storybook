@@ -4,11 +4,11 @@ import { useLocation } from "react-router-dom";
 
 import Fade from "react-reveal/Fade";
 
-import Button from "./common/Button";
-import InputDate from "./common/InputDate";
+import Button from "../Button";
+import InputDate from "../InputDate";
 
-import { checkoutBooking } from "../store/checkout/action";
-import { CheckoutPayload } from "../types/CheckoutPayload";
+import { checkoutBooking } from "../../store/checkout/action";
+import { CheckoutPayload } from "../../types/CheckoutPayload";
 
 type BookingData = {
   _id?: string;

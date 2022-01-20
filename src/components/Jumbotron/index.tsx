@@ -1,6 +1,6 @@
 import Fade from "react-reveal/Fade";
 
-import Button from "./common/Button";
+import Button from "../Button";
 
 import heroImage from "../assets/images/hero1.jpg";
 import iconBook from "../assets/images/icon-book.png";

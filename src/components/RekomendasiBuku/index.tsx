@@ -1,7 +1,6 @@
-import React from "react";
 import Fade from "react-reveal/Fade";
 
-import Button from "./common/Button";
+import Button from "../Button";
 
 type RekomendasiProps = {
   refPilihanBuku: any;

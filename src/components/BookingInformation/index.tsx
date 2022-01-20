@@ -1,8 +1,8 @@
 import Fade from "react-reveal/Fade";
 
-import InputText from "./common/InputText";
+import InputText from "../InputText";
 
-import { CheckoutPayload } from "../types/CheckoutPayload";
+import { CheckoutPayload } from "../../types/CheckoutPayload";
 
 type BookingInformationProps = {
   checkoutData: { name: string; email: string; phone: string };

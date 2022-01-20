@@ -1,5 +1,5 @@
-import IconText from "./IconText";
-import Button from "./common/Button";
+import IconText from "../IconText";
+import Button from "../Button";
 
 const Footer = () => {
   return (

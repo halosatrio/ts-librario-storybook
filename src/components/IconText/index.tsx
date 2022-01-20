@@ -1,4 +1,4 @@
-import Button from "./common/Button";
+import Button from "../Button";
 
 const IconText = (props: { className?: string }) => {
   const classNames = ["brand-text-icon", props.className];

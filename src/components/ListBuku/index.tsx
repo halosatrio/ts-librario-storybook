@@ -1,6 +1,6 @@
 import Fade from "react-reveal/Fade";
 
-import Button from "./Button";
+import Button from "../Button";
 
 import { BooksData } from "../../types/Books";
 

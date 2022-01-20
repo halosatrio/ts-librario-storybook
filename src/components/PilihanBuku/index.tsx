@@ -1,6 +1,6 @@
 import Fade from "react-reveal/Fade";
 
-import Button from "./common/Button";
+import Button from "../Button";
 
 interface DataBuku {
   _id: string;

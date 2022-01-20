@@ -1,11 +1,11 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
 
-import InputText from "./common/InputText";
-import InputFile from "./common/InputFile";
-import Button from "./common/Button";
+import InputText from "../InputText";
+import InputFile from "../InputFile";
+import Button from "../Button";
 
-import items from "../json/paymentItems.json";
+import items from "../../json/paymentItems.json";
 
 type RegisterProps = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
