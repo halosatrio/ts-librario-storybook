@@ -6,7 +6,7 @@ import Button from "../Button";
 
 const defaultProps = { isCentered: false };
 
-const NavBar = ({ isCentered }: { isCentered: boolean }) => {
+const Navbar = ({ isCentered }: { isCentered: boolean }) => {
   let location = useLocation();
   const [collapsed, setCollapsed] = useState(true);
   const handleToggleNavbar = () => {
@@ -82,6 +82,6 @@ const NavBar = ({ isCentered }: { isCentered: boolean }) => {
   );
 };
 
-NavBar.defaultProps = defaultProps;
+Navbar.defaultProps = defaultProps;
 
-export default NavBar;
+export default Navbar;

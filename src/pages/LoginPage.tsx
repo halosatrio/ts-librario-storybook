@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import NavBar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 import LoginForm from "../components/LoginForm";
 
 const LoginPage = () => {
@@ -23,7 +23,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <NavBar isCentered={true} />
+      <Navbar isCentered={true} />
       <LoginForm data={data} onChange={handleChange} />
     </>
   );

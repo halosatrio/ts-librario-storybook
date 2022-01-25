@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 
-import NavBar from "../components/NavBar";
-import Breadcrumb from "../components/Breadcrumb";
+import Navbar from "../components/Navbar";
+import Breadcrumb from "../components/Breadcrumbs";
 import Footer from "../components/Footer";
 import BannerKatalog from "../components/BannerKatalog";
-import TitleText from "../components/common/TitleText";
+import TitleText from "../components/TitleText";
 import BookImage from "../components/BookImage";
 import BookDetail from "../components/BookDetail";
 import BookingForm from "../components/BookingForm";
@@ -45,7 +45,7 @@ const DetailsPage = () => {
 
   return (
     <>
-      <NavBar />
+      <Navbar />
       <Breadcrumb data={breadcrumb} />
       <TitleText isBold>{data.judul}</TitleText>
       <Fade delay={300}>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import NavBar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 import RegisterForm from "../components/RegisterForm";
 
 const RegisterPage = () => {
@@ -25,7 +25,7 @@ const RegisterPage = () => {
 
   return (
     <>
-      <NavBar isCentered />
+      <Navbar isCentered />
       <RegisterForm data={data} onChange={handleChange} />
     </>
   );

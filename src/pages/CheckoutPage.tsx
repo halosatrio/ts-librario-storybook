@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-import NavBar from "../components/NavBar";
-import TitleText from "../components/common/TitleText";
+import Navbar from "../components/Navbar";
+import TitleText from "../components/TitleText";
 import BookingInformation from "../components/BookingInformation";
-import Button from "../components/common/Button";
+import Button from "../components/Button";
 
 import { getBook } from "../services/BookService";
 import { useParams } from "react-router-dom";
@@ -44,7 +44,7 @@ const CheckoutPage = () => {
 
   return (
     <>
-      <NavBar isCentered />
+      <Navbar isCentered />
       <TitleText className="h2 mt-5">
         Informasi Peminjaman{`  `}
         <p className="lead text-gray-500 mt-2">Lengkapi form di bawah</p>

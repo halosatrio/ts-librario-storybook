@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-import NavBar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Jumbotron from "../components/Jumbotron";
 import RekomendasiBuku from "../components/RekomendasiBuku";
@@ -18,7 +18,7 @@ const LandingPage = () => {
 
   return (
     <>
-      <NavBar />
+      <Navbar />
       <Jumbotron refPilihanBuku={refPilihanBuku} />
       <RekomendasiBuku
         refPilihanBuku={refPilihanBuku}

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-import NavBar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Breadcrumb from "../components/Breadcrumb";
-import Pagination from "../components/common/Pagination";
-import ListGenre from "../components/common/ListGenre";
-import ListBuku from "../components/common/ListBuku";
+import Breadcrumb from "../components/Breadcrumbs";
+import Pagination from "../components/Pagination";
+import ListGenre from "../components/ListGenre";
+import ListBuku from "../components/ListBuku";
 
 import { getBooks } from "../services/BookService";
 import { getGenres } from "../services/GenreService";
@@ -57,7 +57,7 @@ const KatalogPage = () => {
 
   return (
     <>
-      <NavBar />
+      <Navbar />
       <Breadcrumb data={breadcrumb} />
       <div className="container my-5">
         <div className="row">

@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import Fade from "react-reveal/Fade";
 
-import NavBar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import UserGuide from "../components/UserGuide";
-import Breadcrumb from "../components/Breadcrumb";
-import TitleText from "../components/common/TitleText";
+import Breadcrumb from "../components/Breadcrumbs";
+import TitleText from "../components/TitleText";
 
 const UserGuidePage = () => {
   const breadcrumb = [
@@ -19,7 +19,7 @@ const UserGuidePage = () => {
   }, []);
   return (
     <>
-      <NavBar />
+      <Navbar />
       <Breadcrumb data={breadcrumb} />
       <Fade bottom>
         <TitleText isBold className="px-4">
