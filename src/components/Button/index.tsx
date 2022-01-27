@@ -1,7 +1,13 @@
 import { ButtonWrapper } from "./style";
 
 type ButtonProps = {
+  /**
+   * onclick function props
+   */
   onClick?: () => void;
+  /**
+   * additional classname props
+   */
   className?: string;
   /**
    * Checks if the button should be disabled
@@ -19,31 +25,58 @@ type ButtonProps = {
    * button Loading State
    */
   isLoading?: boolean;
-  isSmall?: boolean;
-  isLarge?: boolean;
+  /**
+   * choose one of the button sizes
+   */
+  size?: "sm" | "md" | "lg";
+  /**
+   * to set button display: block
+   */
   isBlock?: boolean;
+  /**
+   * to give the button shadow properties
+   */
   hasShadow?: boolean;
-  style?: React.CSSProperties;
+  /**
+   * additional css style props
+   */
+  styles?: React.CSSProperties;
+  /**
+   * button children element
+   */
   children: React.ReactNode;
 };
 
-const Button = (props: ButtonProps) => {
-  const className = [props.className];
-  if (props.isPrimary) className.push("btn-primary");
-  if (props.isLight) className.push("btn-light");
-  if (props.isLarge) className.push("btn-lg");
-  if (props.isSmall) className.push("btn-sm");
-  if (props.isBlock) className.push("btn-block");
-  if (props.hasShadow) className.push("btn-shadow");
+const Button = ({
+  onClick,
+  className,
+  isDisabled,
+  isLoading,
+  isPrimary,
+  isLight,
+  size = "md",
+  isBlock,
+  hasShadow,
+  children,
+  styles,
+}: ButtonProps) => {
+  const classNames = [className];
+
+  if (isPrimary) classNames.push("btn-primary");
+  if (isLight) classNames.push("btn-light");
+  if (size === "lg") classNames.push("btn-lg");
+  if (size === "sm") classNames.push("btn-sm");
+  if (isBlock) classNames.push("btn-block");
+  if (hasShadow) classNames.push("btn-shadow");
 
   return (
     <ButtonWrapper
-      className={className.join(" ")}
-      style={props.style}
-      onClick={props.onClick}
-      disabled={props.isLoading || props.isDisabled}
+      className={classNames.join(" ")}
+      style={styles}
+      onClick={onClick}
+      disabled={isLoading || isDisabled}
     >
-      {props.isLoading ? "Loading..." : props.children}
+      {isLoading ? "Loading..." : children}
     </ButtonWrapper>
   );
 };

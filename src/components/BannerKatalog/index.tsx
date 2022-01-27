@@ -2,11 +2,13 @@ import Fade from "react-reveal/Fade";
 
 import Button from "../Button";
 import bannerImage from "../../assets/images/katalog-banner.jpg";
+import { BannerKatalogWrapper } from "./style";
+import { Link } from "react-router-dom";
 
 const BannerKatalog = () => {
   return (
     <Fade bottom>
-      <div className="container mb-5 katalog-banner">
+      <BannerKatalogWrapper className="container">
         <div className="row">
           <div className="col-10 offset-1 offset-md-0 col-md-6 col-lg-5">
             <figure className="mb-4">
@@ -23,19 +25,14 @@ const BannerKatalog = () => {
             <p className="h6 mb-4 font-weight-light">
               bebas pilih buku yang ingin anda baca
             </p>
-            <Button
-              type="link"
-              href="/catalogue"
-              className="btn"
-              isPrimary
-              hasShadow
-              isLarge
-            >
-              Telusuri Katalog
-            </Button>
+            <Link to={"/catalogue"}>
+              <Button className="btn" isPrimary hasShadow size="lg">
+                Telusuri Katalog
+              </Button>
+            </Link>
           </div>
         </div>
-      </div>
+      </BannerKatalogWrapper>
     </Fade>
   );
 };

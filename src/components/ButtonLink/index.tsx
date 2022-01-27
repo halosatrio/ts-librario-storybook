@@ -1,30 +1,52 @@
 import { Link } from "react-router-dom";
+import { ButtonLinkWrapper } from "./style";
 
 type ButtonLinkProps = {
+  /**
+   * set if the link is refered to external source
+   */
   isExternal?: boolean;
+  /**
+   * destination or href of the link
+   */
   to: string;
+  /**
+   * additional classname props
+   */
   className?: string;
-  style?: React.CSSProperties;
+  /**
+   * additional style props
+   */
+  styles?: React.CSSProperties;
+  /**
+   * link children element
+   */
   children: React.ReactNode;
 };
 
-const ButtonLink = (props: ButtonLinkProps) => {
-  const className = [props.className];
-  if (props.isExternal) {
+const ButtonLink = ({
+  isExternal,
+  to,
+  className,
+  styles,
+  children,
+}: ButtonLinkProps) => {
+  const classNames = [className];
+  if (isExternal) {
     return (
-      <a href={props.to} className={className.join(" ")} style={props.style}>
-        {props.children}
-      </a>
+      <ButtonLinkWrapper>
+        <a href={to} className={classNames.join(" ")} style={styles}>
+          {children}
+        </a>
+      </ButtonLinkWrapper>
     );
   } else {
     return (
-      <Link
-        to={props.to ?? "#"}
-        className={className.join(" ")}
-        style={props.style}
-      >
-        {props.children}
-      </Link>
+      <ButtonLinkWrapper>
+        <Link to={to ?? "#"} className={classNames.join(" ")} style={styles}>
+          {children}
+        </Link>
+      </ButtonLinkWrapper>
     );
   }
 };

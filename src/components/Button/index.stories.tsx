@@ -36,12 +36,12 @@ Light.args = {
 };
 export const Small = Template.bind({});
 Small.args = {
-  isSmall: true,
+  size: "sm",
   children: "Button small",
 };
 export const Large = Template.bind({});
 Large.args = {
-  isLarge: true,
+  size: "lg",
   children: "Button large",
 };
 export const Shadow = Template.bind({});
