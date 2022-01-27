@@ -1,11 +1,17 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import ButtonLink from ".";
-import StoryRouter from "storybook-react-router";
+import { MemoryRouter } from "react-router-dom";
 
 export default {
   component: ButtonLink,
   title: "ButtonLink",
-  decorators: [StoryRouter()],
+  decorators: [
+    (Story) => (
+      <MemoryRouter>
+        <Story />
+      </MemoryRouter>
+    ),
+  ],
 } as ComponentMeta<typeof ButtonLink>;
 
 const Template: ComponentStory<typeof ButtonLink> = (args) => (

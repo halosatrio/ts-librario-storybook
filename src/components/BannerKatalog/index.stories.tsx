@@ -1,16 +1,19 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import StoryRouter from "storybook-react-router";
+import { MemoryRouter } from "react-router-dom";
 import BannerKatalog from ".";
 
 export default {
   component: BannerKatalog,
   title: "BannerKatalog",
-  decorators: [StoryRouter()],
+  decorators: [
+    (Story) => (
+      <MemoryRouter>
+        <Story />
+      </MemoryRouter>
+    ),
+  ],
 } as ComponentMeta<typeof BannerKatalog>;
 
-const Template: ComponentStory<typeof BannerKatalog> = () => <BannerKatalog />;
-
-export const Default = Template.bind({});
-Default.args = {
-  children: "BannerKatalog Default",
-};
+export const BannerKatalogStory: ComponentStory<typeof BannerKatalog> = () => (
+  <BannerKatalog />
+);

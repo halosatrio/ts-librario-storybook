@@ -26,7 +26,7 @@ type ButtonLinkProps = {
 
 const ButtonLink = ({
   isExternal,
-  to,
+  to = "#",
   className,
   styles,
   children,
