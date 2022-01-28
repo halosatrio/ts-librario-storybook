@@ -4,6 +4,7 @@ import InputText from "../InputText";
 import Button from "../Button";
 
 import heroImg from "../assets/images/hero2.jpeg";
+import { Link } from "react-router-dom";
 
 type LoginFormProps = {
   data: {
@@ -38,31 +39,31 @@ const LoginForm = (props: LoginFormProps) => {
             value={data.password}
             onChange={props.onChange}
           />
-          <Button
-            type="link"
-            className="btn py-2 mt-4"
-            href="#"
-            isBlock
-            isPrimary
-            style={{ width: 200 }}
-          >
-            Login
-          </Button>
+          <Link to="#">
+            <Button
+              className="btn py-2 mt-4"
+              isBlock
+              isPrimary
+              styles={{ width: 200 }}
+            >
+              Login
+            </Button>
+          </Link>
           <p
             className="font-weight-light text-gray-500 text-center my-3"
             style={{ width: 200, fontSize: 13, letterSpacing: 1 }}
           >
             jika belum mendaftar
           </p>
-          <Button
-            type="link"
-            className="btn btn-info py-2"
-            href="/register"
-            isBlock
-            style={{ width: 200 }}
-          >
-            Daftar Sekarang
-          </Button>
+          <Link to="/register">
+            <Button
+              className="btn btn-info py-2"
+              isBlock
+              styles={{ width: 200 }}
+            >
+              Daftar Sekarang
+            </Button>
+          </Link>
         </Fade>
       </div>
 
@@ -101,31 +102,31 @@ const LoginForm = (props: LoginFormProps) => {
                 value={data.password}
                 onChange={props.onChange}
               />
-              <Button
-                type="link"
-                className="btn py-2 mt-4"
-                href="#"
-                isBlock
-                isPrimary
-                style={{ width: 200 }}
-              >
-                Login
-              </Button>
+              <Link to="#">
+                <Button
+                  className="btn py-2 mt-4"
+                  isBlock
+                  isPrimary
+                  styles={{ width: 200 }}
+                >
+                  Login
+                </Button>
+              </Link>
               <p
                 className="font-weight-light text-gray-500 text-center my-3"
                 style={{ width: 200, fontSize: 13, letterSpacing: 1 }}
               >
                 jika belum mendaftar
               </p>
-              <Button
-                type="link"
-                className="btn btn-info py-2"
-                href="/register"
-                isBlock
-                style={{ width: 200 }}
-              >
-                Daftar Sekarang
-              </Button>
+              <Link to="/register">
+                <Button
+                  className="btn btn-info py-2"
+                  isBlock
+                  styles={{ width: 200 }}
+                >
+                  Daftar Sekarang
+                </Button>
+              </Link>
             </Fade>
           </div>
         </div>

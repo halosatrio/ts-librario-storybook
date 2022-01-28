@@ -14,6 +14,6 @@ export default {
   ],
 } as ComponentMeta<typeof BannerKatalog>;
 
-export const BannerKatalogStory: ComponentStory<typeof BannerKatalog> = () => (
+export const Default: ComponentStory<typeof BannerKatalog> = () => (
   <BannerKatalog />
 );

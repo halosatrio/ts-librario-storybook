@@ -1,6 +1,11 @@
 import Fade from "react-reveal/Fade";
 
 import Button from "../Button";
+import heroImage from "../../assets/images/hero1.jpg";
+import iconBook from "../../assets/images/icon-book.png";
+import iconHouse from "../../assets/images/icon-house.png";
+import iconSocial from "../../assets/images/icon-social.png";
+import { JumbotronWrapper } from "./style";
 
 const Jumbotron = ({
   refPilihanBuku,
@@ -17,7 +22,7 @@ const Jumbotron = ({
   }
 
   return (
-    <section className="hero">
+    <JumbotronWrapper className="hero">
       <Fade bottom>
         <div className="container d-none d-lg-block">
           <div className="row my-5">
@@ -43,7 +48,7 @@ const Jumbotron = ({
               <div className="row mt-5">
                 <div className="col-3">
                   <img
-                    src={"../assets/images/icon-book.png"}
+                    src={iconBook}
                     alt="icon-book"
                     style={{ maxHeight: 52 }}
                   />
@@ -51,7 +56,7 @@ const Jumbotron = ({
                 </div>
                 <div className="col-lg-auto col-xl-3">
                   <img
-                    src={"../assets/images/icon-social.png"}
+                    src={iconSocial}
                     alt="icon-social"
                     style={{ maxHeight: 52 }}
                   />
@@ -59,7 +64,7 @@ const Jumbotron = ({
                 </div>
                 <div className="col-auto">
                   <img
-                    src={"../assets/images/icon-house.png"}
+                    src={iconHouse}
                     alt="icon-house"
                     style={{ maxHeight: 52 }}
                   />
@@ -69,10 +74,7 @@ const Jumbotron = ({
             </div>
             <div className="col-lg-6">
               <figure className="img-hero">
-                <img
-                  src={"../assets/images/hero1.jpg"}
-                  alt="Rom with couches"
-                />
+                <img src={heroImage} alt="Rom with couches" />
               </figure>
             </div>
           </div>
@@ -126,7 +128,7 @@ const Jumbotron = ({
           </div>
         </Fade>
       </div>
-    </section>
+    </JumbotronWrapper>
   );
 };
 

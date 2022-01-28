@@ -67,7 +67,7 @@ const RegisterForm = (props: RegisterProps) => {
               <InputText
                 id="name"
                 name="name"
-                type="name"
+                type="text"
                 value={data.name}
                 onChange={props.onChange}
               />

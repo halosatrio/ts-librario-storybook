@@ -1,6 +1,6 @@
 import Fade from "react-reveal/Fade";
 
-import Button from "../Button";
+import ButtonLink from "../ButtonLink";
 
 import { BooksData } from "../../types/Books";
 
@@ -16,9 +16,8 @@ const ListBuku = ({ items }: { items: Array<BooksData> | undefined }) => {
             >
               <div className="card">
                 <figure className="img-wrapper" style={{ maxHeight: 300 }}>
-                  <Button
-                    type="link"
-                    href={`/books/${book._id}`}
+                  <ButtonLink
+                    to={`/books/${book._id}`}
                     className="stretched-link d-block"
                   >
                     <img
@@ -26,7 +25,7 @@ const ListBuku = ({ items }: { items: Array<BooksData> | undefined }) => {
                       alt={book.judul}
                       className="img-fluid"
                     />
-                  </Button>
+                  </ButtonLink>
                 </figure>
               </div>
             </div>

@@ -5,8 +5,8 @@ import { BooksGenre } from "../../types/Books";
 
 type ListGenreProps = {
   items: Array<BooksGenre>;
-  onItemSelect: any;
-  selectedItem: any;
+  onItemSelect: (genre: { _id: string; name: string }) => void;
+  selectedItem: BooksGenre | undefined;
 };
 
 const ListGenre = ({ items, onItemSelect, selectedItem }: ListGenreProps) => {

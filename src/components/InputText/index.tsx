@@ -7,7 +7,7 @@ type InputTextProps = {
   value: number | string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   errorResponse?: string;
-  type?: "text" | "email" | "tel";
+  type?: "text" | "email" | "tel" | "password";
   prepend?: number | string;
   append?: number | string;
   placeholder?: string;
