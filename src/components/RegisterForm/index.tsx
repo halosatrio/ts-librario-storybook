@@ -6,6 +6,7 @@ import InputFile from "../InputFile";
 import Button from "../Button";
 
 import items from "../../json/paymentItems.json";
+import { Link } from "react-router-dom";
 
 type RegisterProps = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -94,16 +95,16 @@ const RegisterForm = (props: RegisterProps) => {
                 value={data.proofPayment}
                 onChange={props.onChange}
               />
-              <Button
-                type="link"
-                className="btn py-2 mt-4"
-                href="/"
-                isBlock
-                isPrimary
-                style={{ width: 200 }}
-              >
-                Daftar
-              </Button>
+              <Link to="/">
+                <Button
+                  className="btn py-2 mt-4"
+                  isBlock
+                  isPrimary
+                  styles={{ width: 200 }}
+                >
+                  Daftar
+                </Button>
+              </Link>
             </Fade>
           </div>
         </div>

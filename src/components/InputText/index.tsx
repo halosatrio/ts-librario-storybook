@@ -1,31 +1,26 @@
 import { useState } from "react";
+import { InputTextWrapper } from "./style";
 
 type InputTextProps = {
   id: string;
   name: string;
   value: number | string;
-  errorResponse: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  errorResponse?: string;
+  type?: "text" | "email" | "tel";
   prepend?: number | string;
   append?: number | string;
-  type?: string;
   placeholder?: string;
   outerClassName?: string;
   inputClassName?: string;
 };
 
-const defaultProps = {
-  type: "text",
-  placeholder: "Please type here...",
-  errorResponse: "Please match the requested format.",
-};
-
 const InputText = ({
   id,
   value,
-  type,
-  placeholder,
-  errorResponse,
+  type = "text",
+  placeholder = "Please type here...",
+  errorResponse = "Please match the requested format.",
   name,
   onChange,
   prepend,
@@ -54,7 +49,7 @@ const InputText = ({
   };
 
   return (
-    <div className={["input-text mb-3", outerClassName].join(" ")}>
+    <InputTextWrapper className={["mb-3", outerClassName].join(" ")}>
       <div className="input-group">
         {prepend && (
           <div className="input-group-prepend bg-gray-900">
@@ -78,10 +73,8 @@ const InputText = ({
         )}
       </div>
       {HasError && <span className="error-helper">{HasError}</span>}
-    </div>
+    </InputTextWrapper>
   );
 };
-
-InputText.defaultProps = defaultProps;
 
 export default InputText;
