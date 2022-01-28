@@ -26,7 +26,7 @@ const BannerKatalog = () => {
               bebas pilih buku yang ingin anda baca
             </p>
             <Link to={"/catalogue"}>
-              <Button className="btn" isPrimary hasShadow size="lg">
+              <Button isPrimary hasShadow size="lg">
                 Telusuri Katalog
               </Button>
             </Link>

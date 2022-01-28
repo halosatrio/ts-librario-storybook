@@ -1,11 +1,11 @@
-type BookData = {
+export interface BookData {
   judul: string;
   penulis: string;
   penerbit: string;
   genre: string;
   isbn: string;
   kondisi: string;
-};
+}
 
 const BookDetail = ({ data }: { data: BookData }) => {
   return (

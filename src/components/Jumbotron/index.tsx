@@ -2,11 +2,6 @@ import Fade from "react-reveal/Fade";
 
 import Button from "../Button";
 
-import heroImage from "../assets/images/hero1.jpg";
-import iconBook from "../assets/images/icon-book.png";
-import iconHouse from "../assets/images/icon-house.png";
-import iconSocial from "../assets/images/icon-social.png";
-
 const Jumbotron = ({
   refPilihanBuku,
 }: {
@@ -38,8 +33,7 @@ const Jumbotron = ({
                 everyone can borrow and lend their favorite books.
               </p>
               <Button
-                type="button"
-                className="btn px-5"
+                className="px-5"
                 hasShadow
                 isPrimary
                 onClick={showPilihanBuku}
@@ -49,7 +43,7 @@ const Jumbotron = ({
               <div className="row mt-5">
                 <div className="col-3">
                   <img
-                    src={iconBook}
+                    src={"../assets/images/icon-book.png"}
                     alt="icon-book"
                     style={{ maxHeight: 52 }}
                   />
@@ -57,7 +51,7 @@ const Jumbotron = ({
                 </div>
                 <div className="col-lg-auto col-xl-3">
                   <img
-                    src={iconSocial}
+                    src={"../assets/images/icon-social.png"}
                     alt="icon-social"
                     style={{ maxHeight: 52 }}
                   />
@@ -65,7 +59,7 @@ const Jumbotron = ({
                 </div>
                 <div className="col-auto">
                   <img
-                    src={iconHouse}
+                    src={"../assets/images/icon-house.png"}
                     alt="icon-house"
                     style={{ maxHeight: 52 }}
                   />
@@ -75,7 +69,10 @@ const Jumbotron = ({
             </div>
             <div className="col-lg-6">
               <figure className="img-hero">
-                <img src={heroImage} alt="Rom with couches" />
+                <img
+                  src={"../assets/images/hero1.jpg"}
+                  alt="Rom with couches"
+                />
               </figure>
             </div>
           </div>
@@ -93,12 +90,16 @@ const Jumbotron = ({
             </p>
             <div className="row mt-4 mb-3 justify-content-center px-5">
               <div className="col">
-                <img src={iconBook} alt="icon-book" style={{ maxHeight: 52 }} />
+                <img
+                  src={"../assets/images/icon-book.png"}
+                  alt="icon-book"
+                  style={{ maxHeight: 52 }}
+                />
                 <p className="mt-2 icon">400 Buku</p>
               </div>
               <div className="col">
                 <img
-                  src={iconSocial}
+                  src={"../assets/images/icon-social.png"}
                   alt="icon-social"
                   style={{ maxHeight: 52 }}
                 />
@@ -106,7 +107,7 @@ const Jumbotron = ({
               </div>
               <div className="col">
                 <img
-                  src={iconHouse}
+                  src={"../assets/images/icon-house.png"}
                   alt="icon-house"
                   style={{ maxHeight: 52 }}
                 />
@@ -114,11 +115,11 @@ const Jumbotron = ({
               </div>
             </div>
             <Button
-              type="button"
-              className="btn px-5 button"
+              className="px-5"
               hasShadow
               isPrimary
               onClick={showPilihanBuku}
+              styles={{ zIndex: 3 }}
             >
               Pinjam Buku
             </Button>
