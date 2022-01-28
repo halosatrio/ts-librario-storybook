@@ -8,7 +8,6 @@ const RegisterPage = () => {
     name: "",
     email: "",
     password: "",
-    proofPayment: "",
   });
 
   useEffect(() => {

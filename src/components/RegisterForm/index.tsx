@@ -14,7 +14,6 @@ type RegisterProps = {
     name: string;
     email: string;
     password: string;
-    proofPayment: any;
   };
 };
 
@@ -54,7 +53,7 @@ const RegisterForm = (props: RegisterProps) => {
                   style={{ marginBottom: 60 }}
                 >
                   ketentuan mengenai uang deposito dapat dibaca{" "}
-                  <a href="/user-guide">di sini</a>
+                  <Link to="/user-guide">di sini</Link>
                 </p>
               </div>
             </Fade>
@@ -92,7 +91,6 @@ const RegisterForm = (props: RegisterProps) => {
                 accept="image/*"
                 id="proofPayment"
                 name="proofPayment"
-                value={data.proofPayment}
                 onChange={props.onChange}
               />
               <Link to="/">

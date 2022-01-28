@@ -14,7 +14,7 @@ export const InputDateWrapper = styled.div`
       height: 45px;
       display: flex;
       justify-content: center;
-      background-color: #212529; //$gray-900;
+      background-color: #152c5b; //$gray-900;
       position: absolute;
       z-index: 999;
     }

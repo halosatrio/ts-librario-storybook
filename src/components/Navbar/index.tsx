@@ -2,11 +2,10 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import IcontText from "../IconText";
-import Button from "../Button";
+import ButtonLink from "../ButtonLink";
+import { NavbarWrapper } from "./style";
 
-const defaultProps = { isCentered: false };
-
-const Navbar = ({ isCentered }: { isCentered: boolean }) => {
+const Navbar = ({ isCentered = false }: { isCentered?: boolean }) => {
   let location = useLocation();
   const [collapsed, setCollapsed] = useState(true);
   const handleToggleNavbar = () => {
@@ -38,7 +37,7 @@ const Navbar = ({ isCentered }: { isCentered: boolean }) => {
   // console.log("getNavLink", getNavLinkClass("/"));
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light py-3">
+    <NavbarWrapper className="navbar navbar-expand-lg navbar-light py-3">
       <div className="container">
         <IcontText />
         <button
@@ -56,32 +55,30 @@ const Navbar = ({ isCentered }: { isCentered: boolean }) => {
         <div className={`${classOne}`} id="navbarResponsive">
           <ul className="navbar-nav ml-auto">
             <li className={`nav-item${getNavLinkClass("/")}`}>
-              <Button className="nav-link" type="link" href="/">
+              <ButtonLink className="nav-link" to="/">
                 Home
-              </Button>
+              </ButtonLink>
             </li>
             <li className={`nav-item${getNavLinkClass("/catalogue")}`}>
-              <Button className="nav-link" type="link" href="/catalogue">
+              <ButtonLink className="nav-link" to="/catalogue">
                 Catalogue
-              </Button>
+              </ButtonLink>
             </li>
             <li className={`nav-item${getNavLinkClass("/user-guide")}`}>
-              <Button className="nav-link" type="link" href="/user-guide">
+              <ButtonLink className="nav-link" to="/user-guide">
                 User Guide
-              </Button>
+              </ButtonLink>
             </li>
             <li className={`nav-item${getNavLinkClass("/login")}`}>
-              <Button className="nav-link" type="link" href="/login">
+              <ButtonLink className="nav-link" to="/login">
                 Login
-              </Button>
+              </ButtonLink>
             </li>
           </ul>
         </div>
       </div>
-    </nav>
+    </NavbarWrapper>
   );
 };
-
-Navbar.defaultProps = defaultProps;
 
 export default Navbar;

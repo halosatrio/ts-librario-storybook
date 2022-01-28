@@ -3,7 +3,7 @@ import Fade from "react-reveal/Fade";
 import InputText from "../InputText";
 import Button from "../Button";
 
-import heroImg from "../assets/images/hero2.jpeg";
+import heroImg from "../../assets/images/hero2.jpeg";
 import { Link } from "react-router-dom";
 
 type LoginFormProps = {

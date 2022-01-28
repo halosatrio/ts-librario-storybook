@@ -1,9 +1,10 @@
 import Fade from "react-reveal/Fade";
 
-import Button from "../Button";
+import ButtonLink from "../ButtonLink";
+import { RekomendasiBukuWrapper } from "./style";
 
 type RekomendasiProps = {
-  refPilihanBuku: any;
+  refPilihanBuku?: any;
   data: Array<{
     _id: string;
     genre: { _id: string; name: string };
@@ -15,7 +16,10 @@ type RekomendasiProps = {
 
 const RekomendasiBuku = (props: RekomendasiProps) => {
   return (
-    <section className="container mb-4" ref={props.refPilihanBuku}>
+    <RekomendasiBukuWrapper
+      className="container mb-4"
+      ref={props.refPilihanBuku}
+    >
       <Fade>
         <h4 className="h3 mb-4 font-weight-medium text-center">
           Rekomendasi Buku
@@ -38,13 +42,12 @@ const RekomendasiBuku = (props: RekomendasiProps) => {
                       />
                     </figure>
                     <div className="meta-wrapper">
-                      <Button
-                        type="link"
-                        href={`/books/${item._id}`}
+                      <ButtonLink
+                        to={`/books/${item._id}`}
                         className="stretched-link d-block"
                       >
                         <h5>{item.judul}</h5>
-                      </Button>
+                      </ButtonLink>
                       <span>{item.penulis}</span>
                     </div>
                   </div>
@@ -54,7 +57,7 @@ const RekomendasiBuku = (props: RekomendasiProps) => {
           })}
         </div>
       </Fade>
-    </section>
+    </RekomendasiBukuWrapper>
   );
 };
 

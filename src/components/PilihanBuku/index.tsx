@@ -1,6 +1,7 @@
 import Fade from "react-reveal/Fade";
 
-import Button from "../Button";
+import ButtonLink from "../ButtonLink";
+import { PilihanBukuWrapper } from "./style";
 
 interface DataBuku {
   _id: string;
@@ -26,7 +27,10 @@ const PilihanBuku = ({ data }: { data: Array<PilihanBukuData> }) => {
   return (
     <>
       {data.map((pilihan, index1) => (
-        <section key={`pilihan=${index1}`} className="container mb-5">
+        <PilihanBukuWrapper
+          key={`pilihan=${index1}`}
+          className="container mb-5"
+        >
           <Fade bottom>
             <h4 className="mb-3 font-weight-medium">{pilihan.name}</h4>
             <div className="row">
@@ -50,13 +54,12 @@ const PilihanBuku = ({ data }: { data: Array<PilihanBukuData> }) => {
                           />
                         </figure>
                         <div className="meta-wrapper">
-                          <Button
-                            type="link"
-                            href={`/books/${item._id}`}
+                          <ButtonLink
+                            to={`/books/${item._id}`}
                             className="stretched-link d-block"
                           >
                             <h5>{item.judul}</h5>
-                          </Button>
+                          </ButtonLink>
                           <span>{item.penulis}</span>
                         </div>
                       </div>
@@ -66,9 +69,8 @@ const PilihanBuku = ({ data }: { data: Array<PilihanBukuData> }) => {
               })}
             </div>
           </Fade>
-        </section>
+        </PilihanBukuWrapper>
       ))}
-      ;
     </>
   );
 };

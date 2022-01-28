@@ -1,4 +1,5 @@
 import Fade from "react-reveal/Fade";
+import { Link } from "react-router-dom";
 
 import Button from "../Button";
 
@@ -17,27 +18,23 @@ const UserGuide = () => {
               {`untuk dapat melakukan peminjaman buku yang terdapat di katalog,
             calon peminjam harus sudah terdaftar sebagai anggota Librario.  `}
             </p>
-            <Button
-              type="link"
-              href="/register"
-              className="btn mb-4 font-weight-bold"
-              isPrimary
-              isSmall
-            >
-              Daftar Sekarang
-            </Button>
+            <Link to="/register">
+              <Button className="btn mb-4 font-weight-bold" isPrimary size="sm">
+                Daftar Sekarang
+              </Button>
+            </Link>
             <h5>cara meminjam:</h5>
             <ol>
               <li>
                 {`cek ketersediaan buku yang akan dipinjam di  `}
-                <Button
-                  type="link"
-                  href="/catalogue"
-                  className="badge badge-primary font-weight-normal"
-                  style={{ fontSize: 14 }}
-                >
-                  Katalog Buku
-                </Button>
+                <Link to="/catalogue">
+                  <Button
+                    className="badge badge-primary font-weight-normal"
+                    styles={{ fontSize: 14 }}
+                  >
+                    Katalog Buku
+                  </Button>
+                </Link>
               </li>
               <li>
                 buat permintaan peminjaman buku melalui form yang tersedia email

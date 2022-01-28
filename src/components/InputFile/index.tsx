@@ -4,7 +4,7 @@ type InputFileProps = {
   id: string;
   name: string;
   accept: string;
-  value: string;
+  value?: any;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   prepend?: number | string;
   append?: number | string;
@@ -35,6 +35,8 @@ const InputFile = ({
             <span className="input-group-text">{prepend}</span>
           </div>
         )}
+        {/* I dont know why it's like this. I just follow tutorial. */}
+        {/* but I think it is really weird to write it like this */}
         <input
           id={id}
           accept={accept}
