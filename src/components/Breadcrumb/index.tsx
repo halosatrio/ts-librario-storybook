@@ -1,4 +1,4 @@
-import Button from "../Button";
+import ButtonLink from "../ButtonLink";
 
 type BreadcrumbData = {
   pageTitle: string;
@@ -21,9 +21,7 @@ const Breadcrumb = ({ data }: { data: Array<BreadcrumbData> }) => {
                 {index === data.length - 1 ? (
                   item.pageTitle
                 ) : (
-                  <Button type="link" href={item.pageHref}>
-                    {item.pageTitle}
-                  </Button>
+                  <ButtonLink to={item.pageHref}>{item.pageTitle}</ButtonLink>
                 )}
               </li>
             );

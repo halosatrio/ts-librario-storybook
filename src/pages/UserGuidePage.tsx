@@ -4,7 +4,7 @@ import Fade from "react-reveal/Fade";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import UserGuide from "../components/UserGuide";
-import Breadcrumb from "../components/Breadcrumbs";
+import Breadcrumb from "../components/Breadcrumb";
 import TitleText from "../components/TitleText";
 
 const UserGuidePage = () => {

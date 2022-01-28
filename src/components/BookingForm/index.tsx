@@ -66,11 +66,7 @@ const BookingForm = ({ data }: { data: BookingData }) => {
       <div className="card bordered" style={{ padding: "30px 30px" }}>
         <h4 className="mb-4">Pinjam Sekarang</h4>
         <label htmlFor="date">Pilih tanggal</label>
-        <InputDate
-          name="date"
-          startDate={startDate}
-          setDate={handleUpdateDate}
-        />
+        <InputDate startDate={startDate} setDate={handleUpdateDate} />
         <h6 className="text-gray-600 font-weight-light mb-3">
           Buku{" "}
           <span
@@ -89,13 +85,7 @@ const BookingForm = ({ data }: { data: BookingData }) => {
         <h6 className="text-gray-600 font-weight-light mb-4">
           Droppping Point: Spasso Cafe
         </h6>
-        <Button
-          type="button"
-          className="btn"
-          isPrimary
-          hasShadow
-          onClick={() => {}}
-        >
+        <Button className="btn" isPrimary hasShadow onClick={() => {}}>
           Pinjam Buku
         </Button>
       </div>

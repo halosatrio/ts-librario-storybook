@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Breadcrumb from "../components/Breadcrumbs";
+import Breadcrumb from "../components/Breadcrumb";
 import Pagination from "../components/Pagination";
 import ListGenre from "../components/ListGenre";
 import ListBuku from "../components/ListBuku";

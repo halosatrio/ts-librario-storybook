@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { ButtonLinkWrapper } from "./style";
+import { ButtonLinkExternal, ButtonLinkInternal } from "./style";
 
 type ButtonLinkProps = {
   /**
@@ -34,19 +33,23 @@ const ButtonLink = ({
   const classNames = [className];
   if (isExternal) {
     return (
-      <ButtonLinkWrapper>
-        <a href={to} className={classNames.join(" ")} style={styles}>
-          {children}
-        </a>
-      </ButtonLinkWrapper>
+      <ButtonLinkInternal
+        href={to}
+        className={classNames.join(" ")}
+        style={styles}
+      >
+        {children}
+      </ButtonLinkInternal>
     );
   } else {
     return (
-      <ButtonLinkWrapper>
-        <Link to={to ?? "#"} className={classNames.join(" ")} style={styles}>
-          {children}
-        </Link>
-      </ButtonLinkWrapper>
+      <ButtonLinkExternal
+        to={to ?? "#"}
+        className={classNames.join(" ")}
+        style={styles}
+      >
+        {children}
+      </ButtonLinkExternal>
     );
   }
 };

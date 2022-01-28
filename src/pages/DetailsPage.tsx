@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 
 import Navbar from "../components/Navbar";
-import Breadcrumb from "../components/Breadcrumbs";
+import Breadcrumb from "../components/Breadcrumb";
 import Footer from "../components/Footer";
 import BannerKatalog from "../components/BannerKatalog";
 import TitleText from "../components/TitleText";
