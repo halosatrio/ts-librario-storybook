@@ -1,54 +1,56 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Fade from "react-reveal/Fade";
 
 import Button from "../Button";
 import InputDate from "../InputDate";
 
-import { checkoutBooking } from "../../store/checkout/action";
+import { CheckoutAction, checkoutBooking } from "../../store/checkout/action";
 import { CheckoutPayload } from "../../types/CheckoutPayload";
 import { BooksData } from "../../types/Books";
 
 const BookingForm = ({ data }: { data: Partial<BooksData> | undefined }) => {
-  const [startDate, setstartDate] = useState<Date>(new Date());
-  const [endDate, setendDate] = useState<Date>(new Date());
+  const [startDate, setStartDate] = useState<Date>(new Date());
+  const [endDate, setEndDate] = useState<Date>(new Date());
+
+  let navigate = useNavigate();
 
   const dispatch = useDispatch();
+  const handleCheckoutBook = (payload: CheckoutPayload) =>
+    dispatch(checkoutBooking(payload));
 
   // Hooks
   useEffect(() => {
-    setendDate(handleAddDate(new Date(), 14));
+    setEndDate(handleAddDate(new Date()));
   }, []);
 
-  const handleAddDate = (date: any, days: number) => {
+  const handleAddDate = (date: Date) => {
     let result = new Date(date);
-    result.setDate(result.getDate() + days);
+    result.setDate(result.getDate() + 14);
     return result;
   };
-  const handleUpdateDate = (date: any) => {
-    setstartDate(date);
-    setendDate(handleAddDate(date, 14));
+  const handleUpdateDate = (date: Date | null) => {
+    if (date == null) return;
+    setStartDate(date);
+    setEndDate(handleAddDate(date));
   };
 
   const handleStartBooking = () => {
-    return null;
+    let payload = {
+      _id: "",
+      date: {
+        startDate: startDate,
+        endDate: endDate,
+      },
+    };
+    if (data?._id) {
+      payload._id = data._id;
+      handleCheckoutBook(payload);
+      navigate(`/checkout/${data._id}`);
+    }
   };
-
-  // startBooking = () => {
-  //   const { startDate, endDate } = this.state;
-  //   this.props.startBooking({
-  //     _id: this.props.data._id,
-  //     date: {
-  //       startDate: startDate,
-  //       endDate: endDate,
-  //     },
-  //   });
-  //   this.props.history.push(`/checkout/${this.props.data._id}`);
-  // };
-
-  console.log(`RENDER - start: ${startDate}, end: ${endDate}`);
 
   return (
     <Fade delay={500}>
@@ -74,7 +76,12 @@ const BookingForm = ({ data }: { data: Partial<BooksData> | undefined }) => {
         <h6 className="text-gray-600 font-weight-light mb-4">
           Droppping Point: Spasso Cafe
         </h6>
-        <Button className="btn" isPrimary hasShadow onClick={() => {}}>
+        <Button
+          className="btn"
+          isPrimary
+          hasShadow
+          onClick={handleStartBooking}
+        >
           Pinjam Buku
         </Button>
       </div>

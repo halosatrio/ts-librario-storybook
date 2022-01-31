@@ -9,7 +9,7 @@ import { InputDateWrapper } from "./style";
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 type InputDateProps = {
-  startDate: Date | null;
+  startDate: Date;
   setDate: (date: Date | null) => void;
 };
 

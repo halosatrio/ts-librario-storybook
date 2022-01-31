@@ -10,6 +10,7 @@ import { getBook } from "../services/BookService";
 import { Link, useParams } from "react-router-dom";
 
 import { RootState } from "../store/reducers";
+import { BooksData } from "../types/Books";
 
 const CheckoutPage = () => {
   const [checkoutData, setCheckoutData] = useState({
@@ -17,11 +18,7 @@ const CheckoutPage = () => {
     email: "",
     phone: "",
   });
-  const [bookData, setBookData] = useState({
-    judul: "",
-    penulis: "",
-    imageUrl: "",
-  });
+  const [bookData, setBookData] = useState<BooksData | undefined>();
 
   let { bookId } = useParams();
 
@@ -37,10 +34,12 @@ const CheckoutPage = () => {
 
   useEffect(() => {
     window.scroll(0, 0);
-    if (bookId !== undefined) {
-      const book = getBook(bookId);
+    if (!!checkoutState) {
+      setBookData(getBook(checkoutState._id));
     }
   }, []);
+
+  console.log("checkoutState", checkoutState);
 
   return (
     <>

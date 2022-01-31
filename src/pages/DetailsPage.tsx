@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import Fade from "react-reveal/Fade";
 
 import Navbar from "../components/Navbar";
@@ -12,13 +13,14 @@ import BookDetail from "../components/BookDetail";
 import BookingForm from "../components/BookingForm";
 
 import { getBook } from "../services/BookService";
-import { BooksData } from "../types/Books";
-
 import { checkoutBooking } from "../store/checkout/action";
+import { BooksData } from "../types/Books";
+import { CheckoutPayload } from "../types/CheckoutPayload";
 
 const DetailsPage = () => {
   const params = useParams();
   const { id } = params;
+
   const [data, setData] = useState<BooksData | undefined>();
 
   useEffect(() => {
