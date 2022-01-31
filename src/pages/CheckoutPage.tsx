@@ -7,7 +7,7 @@ import BookingInformation from "../components/BookingInformation";
 import Button from "../components/Button";
 
 import { getBook } from "../services/BookService";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { RootState } from "../store/reducers";
 
@@ -56,28 +56,23 @@ const CheckoutPage = () => {
         checkout={checkoutState}
       />
       <div className="d-flex justify-content-center mb-3">
-        <Button
-          type="link"
-          className="btn py-2"
-          href="/"
-          isBlock
-          isPrimary
-          style={{ width: 200 }}
-        >
-          Pinjam Buku
-        </Button>
+        <Link to="/">
+          <Button
+            className="btn py-2"
+            isBlock
+            isPrimary
+            styles={{ width: 200 }}
+          >
+            Pinjam Buku
+          </Button>
+        </Link>
       </div>
       <div className="d-flex justify-content-center mb-5">
-        <Button
-          type="link"
-          className="btn py-2"
-          href="/"
-          isBlock
-          isLight
-          style={{ width: 200 }}
-        >
-          Cancel
-        </Button>
+        <Link to="/">
+          <Button className="btn py-2" isBlock isLight styles={{ width: 200 }}>
+            Cancel
+          </Button>
+        </Link>
       </div>
     </>
   );

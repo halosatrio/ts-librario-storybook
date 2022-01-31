@@ -12,30 +12,22 @@ import BookDetail from "../components/BookDetail";
 import BookingForm from "../components/BookingForm";
 
 import { getBook } from "../services/BookService";
+import { BooksData } from "../types/Books";
 
 import { checkoutBooking } from "../store/checkout/action";
 
 const DetailsPage = () => {
   const params = useParams();
+  const { id } = params;
+  const [data, setData] = useState<BooksData | undefined>();
 
-  const [data, setData] = useState({
-    _id: "",
-    isbn: "",
-    judul: "",
-    genre: "",
-    penulis: "",
-    penerbit: "",
-    kondisi: "",
-    ketersediaan: "",
-    imageUrl: "",
-  });
   useEffect(() => {
     document.title = "Librario | Detail Buku";
     window.scrollTo(0, 0);
 
-    const bookId = params;
-
-    const book = getBook(bookId);
+    if (!!id) {
+      setData(getBook(id));
+    }
   }, []);
 
   const breadcrumb = [
@@ -47,16 +39,16 @@ const DetailsPage = () => {
     <>
       <Navbar />
       <Breadcrumb data={breadcrumb} />
-      <TitleText isBold>{data.judul}</TitleText>
+      <TitleText isBold>{data?.judul}</TitleText>
       <Fade delay={300}>
         <section className="container mb-5">
           <div className="row justify-content-around">
             <div className="col-10 col-md-6 col-lg-6 col-xl-5 mb-4">
-              <BookImage data={data} />
+              <BookImage data={data ? data : undefined} />
             </div>
             <div className="deskripsi-buku col-11 col-md-6 col-lg-6 col-xl-5">
-              <BookDetail data={data} />
-              <BookingForm data={data} />
+              <BookDetail data={data ? data : undefined} />
+              <BookingForm data={data ? data : undefined} />
             </div>
           </div>
         </section>

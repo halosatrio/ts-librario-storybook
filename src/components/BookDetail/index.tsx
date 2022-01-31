@@ -1,13 +1,6 @@
-export interface BookData {
-  judul: string;
-  penulis: string;
-  penerbit: string;
-  genre: string;
-  isbn: string;
-  kondisi: string;
-}
+import { BooksData } from "../../types/Books";
 
-const BookDetail = ({ data }: { data: BookData }) => {
+const BookDetail = ({ data }: { data: Partial<BooksData> | undefined }) => {
   return (
     <>
       <h3 className="mb-4 text-gray-800">Detail Buku</h3>
@@ -15,27 +8,27 @@ const BookDetail = ({ data }: { data: BookData }) => {
         <tbody>
           <tr>
             <th>Judul</th>
-            <td>{data.judul}</td>
+            <td>{data?.judul}</td>
           </tr>
           <tr>
             <th>Penulis</th>
-            <td>{data.penulis}</td>
+            <td>{data?.penulis}</td>
           </tr>
           <tr>
             <th>Penerbit</th>
-            <td>{data.penerbit}</td>
+            <td>{data?.penerbit}</td>
           </tr>
           <tr>
             <th>Genre</th>
-            <td>{data.genre}</td>
+            <td>{data?.genre?.name}</td>
           </tr>
           <tr>
             <th>ISBN</th>
-            <td>{data.isbn}</td>
+            <td>{data?.isbn}</td>
           </tr>
           <tr>
             <th>Kondisi</th>
-            <td>{data.kondisi}</td>
+            <td>{data?.kondisi}</td>
           </tr>
         </tbody>
       </table>

@@ -9,20 +9,9 @@ import InputDate from "../InputDate";
 
 import { checkoutBooking } from "../../store/checkout/action";
 import { CheckoutPayload } from "../../types/CheckoutPayload";
+import { BooksData } from "../../types/Books";
 
-type BookingData = {
-  _id?: string;
-  isbn?: string;
-  judul?: string;
-  genre?: string;
-  penulis?: string;
-  penerbit?: string;
-  kondisi?: string;
-  ketersediaan?: string;
-  imageUrl?: string;
-};
-
-const BookingForm = ({ data }: { data: BookingData }) => {
+const BookingForm = ({ data }: { data: Partial<BooksData> | undefined }) => {
   const [startDate, setstartDate] = useState<Date>(new Date());
   const [endDate, setendDate] = useState<Date>(new Date());
 
@@ -71,11 +60,11 @@ const BookingForm = ({ data }: { data: BookingData }) => {
           Buku{" "}
           <span
             className={`mt-3 badge font-weight-normal ${
-              data.ketersediaan === "Tersedia" ? "badge-info" : "badge-danger"
+              data?.ketersediaan === "Tersedia" ? "badge-info" : "badge-danger"
             }`}
             style={{ fontSize: 14 }}
           >
-            {data.ketersediaan}
+            {data?.ketersediaan}
           </span>{" "}
           untuk
           {`${startDate.toDateString().slice(3, 10)} - ${endDate

@@ -16,7 +16,7 @@ Default.args = {
     judul: "#TemanTapiMenikah",
     penulis: "Ayudia Bing Slamet & Ditto Percussion",
     penerbit: "Elex Media Komputindo",
-    genre: "Novel",
+    genre: { _id: "5f04063750c55b3ca78d648d", name: "Novel" },
     isbn: "9786020290508",
     kondisi: "Baik",
   },
