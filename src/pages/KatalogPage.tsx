@@ -12,34 +12,43 @@ import { getGenres } from "../services/GenreService";
 import { paginate } from "../utils/paginate";
 
 import { BooksGenre, BooksData } from "../types/Books";
+import { filter } from "lodash";
 
 const KatalogPage = () => {
   const [books, setBooks] = useState<Array<BooksData>>();
-  const [genres, setGenres] = useState<any>([]);
-  const [selectedGenre, setSelectedGenre] = useState<BooksGenre>();
+  const genres = [{ _id: "0", name: "Semua Buku" }, ...getGenres()];
+  const [selectedGenre, setSelectedGenre] = useState<BooksGenre>({
+    _id: "0",
+    name: "Semua Buku",
+  });
   const [currentPage, setCurrentPage] = useState(1);
-  const [filtered, setFiltered] = useState<BooksData | Array<BooksData>>();
+  const [filtered, setFiltered] = useState<Array<BooksData>>();
+  const [displayedBooks, setDisplayedBooks] = useState<Array<BooksData>>();
+
   const pageSize = 8;
 
   useEffect(() => {
     document.title = "Librario | Katalog";
     window.scrollTo(0, 0);
-
-    setGenres([{ name: "Semua Buku" }, ...getGenres()]);
     setBooks(getBooks());
   }, []);
 
   useEffect(() => {
-    setFiltered(
-      selectedGenre && selectedGenre._id
-        ? books?.filter((b) => b?.genre?._id === selectedGenre?._id)
-        : books
-    );
-  }, [books, selectedGenre]);
+    setFiltered(books);
+    setDisplayedBooks(paginate(books, currentPage, pageSize));
+    console.log("test displayed first");
+  }, [books]);
 
   useEffect(() => {
-    setBooks(paginate(filtered, currentPage, pageSize));
-  }, [filtered, currentPage, pageSize]);
+    if (selectedGenre?._id === "0") {
+      setFiltered(books);
+    } else
+      setFiltered(books?.filter((b) => b?.genre?._id === selectedGenre?._id));
+  }, [selectedGenre]);
+
+  useEffect(() => {
+    setDisplayedBooks(paginate(filtered, currentPage, pageSize));
+  }, [currentPage, filtered]);
 
   const breadcrumb = [
     { pageTitle: "Home", pageHref: "/" },
@@ -55,6 +64,12 @@ const KatalogPage = () => {
     setCurrentPage(1);
   };
 
+  console.log("hehe", selectedGenre);
+  // console.log("selectedGenre", selectedGenre);
+  // // console.log("books", paginate(filtered, currentPage, pageSize));
+  // console.log("filtered", filtered);
+  // console.log("displayedBooks", displayedBooks);
+
   return (
     <>
       <Navbar />
@@ -67,9 +82,9 @@ const KatalogPage = () => {
             onItemSelect={handleGenreSelect}
           />
           <div className="col">
-            <ListBuku items={books} />
+            <ListBuku items={displayedBooks} />
             <Pagination
-              itemsCount={Array.isArray(filtered) ? filtered.length : 0}
+              itemsCount={!!filtered ? filtered.length : 0}
               pageSize={pageSize}
               currentPage={currentPage}
               onPageChange={handlePageChange}

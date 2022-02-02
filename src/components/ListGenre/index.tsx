@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Fade from "react-reveal/Fade";
 
 import { BooksGenre } from "../../types/Books";
 
@@ -18,7 +17,7 @@ const ListGenre = ({ items, onItemSelect, selectedItem }: ListGenreProps) => {
     : "btn btn-block text-left";
 
   return (
-    <Fade>
+    <>
       <div
         className="accordion d-block d-md-none col-md-3 col-lg-2 mb-4"
         id="accordionGenre"
@@ -69,7 +68,7 @@ const ListGenre = ({ items, onItemSelect, selectedItem }: ListGenreProps) => {
             <li
               key={index}
               className={
-                item === selectedItem
+                item?.name === selectedItem?.name
                   ? "list-group-item active"
                   : "list-group-item"
               }
@@ -80,7 +79,7 @@ const ListGenre = ({ items, onItemSelect, selectedItem }: ListGenreProps) => {
           ))}
         </ul>
       </div>
-    </Fade>
+    </>
   );
 };
 

@@ -1,4 +1,3 @@
-import Fade from "react-reveal/Fade";
 import range from "lodash/range";
 import propTypes from "prop-types";
 
@@ -21,20 +20,18 @@ const Pagination = ({
   const pages = range(1, pagesCount + 1);
 
   return (
-    <Fade delay={600}>
-      <ul className="pagination">
-        {pages.map((page, index) => (
-          <li
-            key={index}
-            className={page === currentPage ? "page-item active" : "page-item"}
-          >
-            <a className="page-link" onClick={() => onPageChange(page)}>
-              {page}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </Fade>
+    <ul className="pagination">
+      {pages.map((page, index) => (
+        <li
+          key={index}
+          className={page === currentPage ? "page-item active" : "page-item"}
+        >
+          <a className="page-link" onClick={() => onPageChange(page)}>
+            {page}
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 };
 
