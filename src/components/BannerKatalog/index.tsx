@@ -16,13 +16,13 @@ const BannerKatalog = () => {
             </figure>
           </div>
           <div className="col-10 offset-1 offset-md-0 col-md-6 col-lg-6 mx-lg-4">
-            <p className="h4 mb-3 mb-md-2 mb-lg-4 font-weight-light">
+            <p className="h4 mb-3 mb-md-2 mb-lg-4 fw-light">
               Perpustakaan Kolektif
             </p>
-            <h5 className="h2 mb-3 font-weight-bolder line-height-2 my-2">
+            <h5 className="h2 mb-3 fw-bolder line-height-2 my-2">
               Katalog kami mencakup lebih dari 400 buku
             </h5>
-            <p className="h6 mb-4 font-weight-light">
+            <p className="h6 mb-4 fw-light">
               bebas pilih buku yang ingin anda baca
             </p>
             <Link to={"/catalogue"}>
