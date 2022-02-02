@@ -68,7 +68,7 @@ const CheckoutPage = () => {
       </div>
       <div className="d-flex justify-content-center mb-5">
         <Link to="/">
-          <Button className="btn py-2" isBlock isLight styles={{ width: 200 }}>
+          <Button className="btn py-2" isBlock styles={{ width: 200 }}>
             Cancel
           </Button>
         </Link>

@@ -3,6 +3,7 @@ import Fade from "react-reveal/Fade";
 import InputText from "../InputText";
 
 import { CheckoutPayload } from "../../types/CheckoutPayload";
+import { BookingInformationWrapper } from "./style";
 
 type BookingInformationProps = {
   checkoutData: { name: string; email: string; phone: string };
@@ -18,7 +19,7 @@ const BookingInformation = ({
   onChange,
 }: BookingInformationProps) => {
   return (
-    <div className="container">
+    <BookingInformationWrapper className="container">
       <div
         className="row justify-content-center align-items-center"
         style={{ marginBottom: 30 }}
@@ -31,14 +32,14 @@ const BookingInformation = ({
             <div className="card">
               <figure className="img-wrapper" style={{ height: 400 }}>
                 <img
-                  src={book.imageUrl}
-                  alt={book.judul}
+                  src={book?.imageUrl}
+                  alt={book?.judul}
                   className="img-fluid"
                 />
               </figure>
               <div className="meta-wrapper pr-5">
-                <h5>{book.judul}</h5>
-                <span className="text-gray-500">{book.penulis}</span>
+                <h5>{book?.judul}</h5>
+                <span className="text-gray-500">{book?.penulis}</span>
               </div>
             </div>
           </Fade>
@@ -55,7 +56,7 @@ const BookingInformation = ({
             >
               {"Tanggal Pinjam: "}
               <span
-                className="font-weight-light badge badge-primary"
+                className="font-weight-light badge bg-success"
                 style={{ fontSize: "1.1rem" }}
               >
                 {`${checkout.date.startDate.toDateString().slice(3, 10)} - 
@@ -90,7 +91,7 @@ const BookingInformation = ({
           </Fade>
         </div>
       </div>
-    </div>
+    </BookingInformationWrapper>
   );
 };
 

@@ -7,8 +7,13 @@ export const FooterWrapper = styled.footer`
 
   .brand-tagline {
     margin-top: 8px;
-    color: $gray-500;
+    color: #495057;
     font-weight: 300;
+  }
+
+  h6 {
+    color: #343a40; //$gray-800;
+    font-weight: bold;
   }
 
   .list-group-item {
@@ -17,19 +22,22 @@ export const FooterWrapper = styled.footer`
     border: 0;
     a,
     span {
-      color: #adb5bd; //$gray-500;
+      color: #6c757d; //$gray-600;
       font-weight: 300;
     }
-    a {
-      @include hover-focus {
-        color: #343a40; //$gray-800;
-      }
+    a:hover {
+      color: #343a40; //$gray-800;
     }
   }
   .copyrights {
     font-size: 15px;
     margin: 20px 0;
     font-weight: 300;
-    color: #adb5bd; //$gray-500;
+    color: #6c757d; //$gray-600;
+
+    a {
+      font-weight: bold;
+      color: crimson;
+    }
   }
 `;
