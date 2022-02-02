@@ -22,7 +22,7 @@ const LoginForm = (props: LoginFormProps) => {
       <div className="jumbotron-form jumbotron-fluid d-block d-md-none" />
       <div className="d-block d-md-none container px-5 my-5">
         <Fade delay={500}>
-          <h4 className="font-weight-light mb-5">Login</h4>
+          <h4 className="fw-light mb-5">Login</h4>
           <label htmlFor="email">Email</label>
           <InputText
             id="email"
@@ -50,7 +50,7 @@ const LoginForm = (props: LoginFormProps) => {
             </Button>
           </Link>
           <p
-            className="font-weight-light text-gray-500 text-center my-3"
+            className="fw-light text-gray-500 text-center my-3"
             style={{ width: 200, fontSize: 13, letterSpacing: 1 }}
           >
             jika belum mendaftar
@@ -85,7 +85,7 @@ const LoginForm = (props: LoginFormProps) => {
           <div className="d-none d-lg-block col-1"></div>
           <div className="col-10 col-sm-8 col-md-6 col-lg-5">
             <Fade delay={300}>
-              <h4 className="font-weight-light mb-4">Login</h4>
+              <h4 className="fw-light mb-4">Login</h4>
               <label htmlFor="email">Email</label>
               <InputText
                 id="email"
@@ -113,7 +113,7 @@ const LoginForm = (props: LoginFormProps) => {
                 </Button>
               </Link>
               <p
-                className="font-weight-light text-gray-500 text-center my-3"
+                className="fw-light text-gray-500 text-center my-3"
                 style={{ width: 200, fontSize: 13, letterSpacing: 1 }}
               >
                 jika belum mendaftar

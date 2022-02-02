@@ -56,13 +56,17 @@ const BookingForm = ({ data }: { data: Partial<BooksData> | undefined }) => {
     <Fade delay={500}>
       <div className="card bordered" style={{ padding: "30px 30px" }}>
         <h4 className="mb-4">Pinjam Sekarang</h4>
-        <label htmlFor="date">Pilih tanggal</label>
+        <label className="mb-2" htmlFor="date">
+          Pilih tanggal
+        </label>
         <InputDate startDate={startDate} setDate={handleUpdateDate} />
-        <h6 className="text-gray-600 font-weight-light mb-3">
+        <h6 className="text-gray-600 fw-light mb-3">
           Buku{" "}
           <span
-            className={`mt-3 badge font-weight-normal ${
-              data?.ketersediaan === "Tersedia" ? "badge-info" : "badge-danger"
+            className={`mt-3 badge fw-normal ${
+              data?.ketersediaan === "Tersedia"
+                ? "badge bg-success"
+                : "badge bg-danger"
             }`}
             style={{ fontSize: 14 }}
           >
@@ -73,7 +77,7 @@ const BookingForm = ({ data }: { data: Partial<BooksData> | undefined }) => {
             .toDateString()
             .slice(3, 10)}`}
         </h6>
-        <h6 className="text-gray-600 font-weight-light mb-4">
+        <h6 className="text-gray-600 fw-light mb-4">
           Droppping Point: Spasso Cafe
         </h6>
         <Button
@@ -114,10 +118,10 @@ export default BookingForm;
 //           startDate={date.startDate}
 //           setStartDate={setDate}
 //         />
-//         <h6 className="text-gray-600 font-weight-light mb-3">
+//         <h6 className="text-gray-600 fw-light mb-3">
 //           Buku{" "}
 //           <span
-//             className={`mt-3 badge font-weight-normal ${
+//             className={`mt-3 badge fw-normal ${
 //               data.ketersediaan === "Tersedia" ? "badge-info" : "badge-danger"
 //             }`}
 //             style={{ fontSize: 14 }}
@@ -128,7 +132,7 @@ export default BookingForm;
 //             .toDateString()
 //             .slice(3, 10)} - ${date.endDate.toDateString().slice(3, 10)}`}
 //         </h6>
-//         <h6 className="text-gray-600 font-weight-light mb-4">
+//         <h6 className="text-gray-600 fw-light mb-4">
 //           Droppping Point: Spasso Cafe
 //         </h6>
 //         <Button

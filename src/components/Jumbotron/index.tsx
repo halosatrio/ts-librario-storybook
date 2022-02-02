@@ -27,7 +27,7 @@ const Jumbotron = ({
         <div className="container d-none d-lg-block">
           <div className="row my-5">
             <div className="col-lg-6 pr-4 my-3">
-              <h1 className="font-weight-bold line-height-1 mb-3">
+              <h1 className="fw-bold line-height-1 mb-3">
                 Perpustakaan Kolektif dan Media Literasi.
               </h1>
               <p
@@ -74,7 +74,7 @@ const Jumbotron = ({
             </div>
             <div className="col-lg-6">
               <figure className="img-hero">
-                <img src={heroImage} alt="Rom with couches" />
+                <img src={heroImage} alt="Room with couches" />
               </figure>
             </div>
           </div>
@@ -83,7 +83,7 @@ const Jumbotron = ({
       <div className="jumbotron jumbotron-fluid d-block d-lg-none">
         <Fade bottom>
           <div className="container">
-            <h1 className="font-weight-bold line-height-1">
+            <h1 className="fw-bold line-height-1">
               Perpustakaan Kolektif dan <br /> Media Literasi.
             </h1>
             <p className="lead my-4">
@@ -92,28 +92,24 @@ const Jumbotron = ({
             </p>
             <div className="row mt-4 mb-3 justify-content-center px-5">
               <div className="col">
-                <img
-                  src={"../assets/images/icon-book.png"}
-                  alt="icon-book"
-                  style={{ maxHeight: 52 }}
-                />
-                <p className="mt-2 icon">400 Buku</p>
+                <img src={iconBook} alt="icon-book" style={{ maxHeight: 52 }} />
+                <p className="mt-2">400 Buku</p>
               </div>
-              <div className="col">
+              <div className="col-lg-auto col-xl-3">
                 <img
-                  src={"../assets/images/icon-social.png"}
+                  src={iconSocial}
                   alt="icon-social"
                   style={{ maxHeight: 52 }}
                 />
-                <p className="mt-2 icon">50 Anggota</p>
+                <p className="mt-2">50 Anggota</p>
               </div>
-              <div className="col">
+              <div className="col-auto">
                 <img
-                  src={"../assets/images/icon-house.png"}
+                  src={iconHouse}
                   alt="icon-house"
                   style={{ maxHeight: 52 }}
                 />
-                <p className="mt-2 icon">5 Dropping Point</p>
+                <p className="mt-2">5 Dropping Point</p>
               </div>
             </div>
             <Button

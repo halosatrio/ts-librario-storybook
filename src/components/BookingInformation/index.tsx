@@ -50,13 +50,10 @@ const BookingInformation = ({
           // style={{ paddingLeft: 80 }}
         >
           <Fade delay={300}>
-            <h5
-              className="font-weight-light mb-5"
-              style={{ fontSize: "1.1rem" }}
-            >
+            <h5 className="fw-light mb-5" style={{ fontSize: "1.1rem" }}>
               {"Tanggal Pinjam: "}
               <span
-                className="font-weight-light badge bg-success"
+                className="fw-light badge bg-success"
                 style={{ fontSize: "1.1rem" }}
               >
                 {`${checkout.date.startDate.toDateString().slice(3, 10)} - 

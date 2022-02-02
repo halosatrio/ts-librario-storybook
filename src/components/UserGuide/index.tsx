@@ -19,7 +19,7 @@ const UserGuide = () => {
             calon peminjam harus sudah terdaftar sebagai anggota Librario.  `}
             </p>
             <Link to="/register">
-              <Button className="btn mb-4 font-weight-bold" isPrimary size="sm">
+              <Button className="btn mb-4 fw-bold" isPrimary size="sm">
                 Daftar Sekarang
               </Button>
             </Link>
@@ -29,7 +29,7 @@ const UserGuide = () => {
                 {`cek ketersediaan buku yang akan dipinjam di  `}
                 <Link to="/catalogue">
                   <Button
-                    className="badge badge-primary font-weight-normal"
+                    className="badge badge-primary fw-normal"
                     styles={{ fontSize: 14 }}
                   >
                     Katalog Buku

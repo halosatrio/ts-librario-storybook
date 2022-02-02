@@ -25,7 +25,7 @@ const UserGuidePage = () => {
         <TitleText isBold className="px-4">
           <>
             {`User Guide  `}
-            <span className="font-weight-normal">|</span>
+            <span className="fw-normal">|</span>
             {`  Rule of the Game`}
           </>
         </TitleText>

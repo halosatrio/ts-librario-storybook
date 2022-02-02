@@ -14,7 +14,6 @@ const Navbar = ({ isCentered = false }: { isCentered?: boolean }) => {
 
   const getNavLinkClass = (path: string) => {
     return location.pathname === path ? " active" : "";
-    // return "";
   };
 
   const classOne = collapsed
@@ -34,8 +33,6 @@ const Navbar = ({ isCentered = false }: { isCentered?: boolean }) => {
     );
   }
 
-  // console.log("getNavLink", getNavLinkClass("/"));
-
   return (
     <NavbarWrapper className="navbar navbar-expand-lg navbar-light py-3">
       <div className="container">
@@ -52,8 +49,11 @@ const Navbar = ({ isCentered = false }: { isCentered?: boolean }) => {
         >
           <span className="navbar-toggler-icon" />
         </button>
-        <div className={`${classOne}`} id="navbarResponsive">
-          <ul className="navbar-nav ml-auto">
+        <div
+          className={`justify-content-end ${classOne}`}
+          id="navbarResponsive"
+        >
+          <ul className="navbar-nav">
             <li className={`nav-item${getNavLinkClass("/")}`}>
               <ButtonLink className="nav-link" to="/">
                 Home

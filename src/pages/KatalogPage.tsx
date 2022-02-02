@@ -12,7 +12,6 @@ import { getGenres } from "../services/GenreService";
 import { paginate } from "../utils/paginate";
 
 import { BooksGenre, BooksData } from "../types/Books";
-import { filter } from "lodash";
 
 const KatalogPage = () => {
   const [books, setBooks] = useState<Array<BooksData>>();
@@ -36,7 +35,6 @@ const KatalogPage = () => {
   useEffect(() => {
     setFiltered(books);
     setDisplayedBooks(paginate(books, currentPage, pageSize));
-    console.log("test displayed first");
   }, [books]);
 
   useEffect(() => {
@@ -64,23 +62,19 @@ const KatalogPage = () => {
     setCurrentPage(1);
   };
 
-  console.log("hehe", selectedGenre);
-  // console.log("selectedGenre", selectedGenre);
-  // // console.log("books", paginate(filtered, currentPage, pageSize));
-  // console.log("filtered", filtered);
-  // console.log("displayedBooks", displayedBooks);
-
   return (
     <>
       <Navbar />
       <Breadcrumb data={breadcrumb} />
       <div className="container my-5">
         <div className="row">
-          <ListGenre
-            items={genres}
-            selectedItem={selectedGenre}
-            onItemSelect={handleGenreSelect}
-          />
+          <div className="col-auto">
+            <ListGenre
+              items={genres}
+              selectedItem={selectedGenre}
+              onItemSelect={handleGenreSelect}
+            />
+          </div>
           <div className="col">
             <ListBuku items={displayedBooks} />
             <Pagination

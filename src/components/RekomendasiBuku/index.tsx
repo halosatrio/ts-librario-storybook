@@ -21,9 +21,7 @@ const RekomendasiBuku = (props: RekomendasiProps) => {
       ref={props.refPilihanBuku}
     >
       <Fade>
-        <h4 className="h3 mb-4 font-weight-medium text-center">
-          Rekomendasi Buku
-        </h4>
+        <h4 className="h3 mb-4 text-center">Rekomendasi Buku</h4>
         <div className="row">
           {props.data.map((item, index) => {
             return (

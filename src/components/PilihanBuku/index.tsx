@@ -32,7 +32,7 @@ const PilihanBuku = ({ data }: { data: Array<PilihanBukuData> }) => {
           className="container mb-5"
         >
           <Fade bottom>
-            <h4 className="mb-3 font-weight-medium">{pilihan.name}</h4>
+            <h4 className="mb-3 fw-weight-medium">{pilihan.name}</h4>
             <div className="row">
               {pilihan.items.map((item, index2) => {
                 return (

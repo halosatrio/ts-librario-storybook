@@ -26,10 +26,10 @@ const RegisterForm = (props: RegisterProps) => {
         <div className="row justify-content-center">
           <div className="col-md-6 col-lg-5">
             <Fade>
-              <h5 className="font-weight-light mb-3 text-gray-500 text-center text-md-left px-5">
+              <h5 className="fw-light mb-3 text-gray-500 text-center text-md-left px-5">
                 Biaya Deposit Pendaftaran:
               </h5>
-              <h4 className="font-weight-light mb-4 text-center text-md-left px-5">
+              <h4 className="fw-light mb-4 text-center text-md-left px-5">
                 Rp50.000
               </h4>
               {items.map((item, index) => {
@@ -61,7 +61,7 @@ const RegisterForm = (props: RegisterProps) => {
           <div className="d-none d-lg-block col-1"></div>
           <div className="col-10 col-sm-8 col-md-6 col-lg-5">
             <Fade delay={300}>
-              <h4 className="font-weight-light mb-4">Daftar Anggota</h4>
+              <h4 className="fw-light mb-4">Daftar Anggota</h4>
               <label htmlFor="name">Nama Lengkap</label>
               <InputText
                 id="name"
