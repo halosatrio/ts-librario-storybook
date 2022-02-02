@@ -71,15 +71,9 @@ const LoginForm = (props: LoginFormProps) => {
         <div className="row justify-content-center align-items-center mb-5">
           <div className="col-md-6 col-lg-5">
             <Fade>
-              <div className="card">
-                <figure className="img-wrapper" style={{ maxHeight: 350 }}>
-                  <img
-                    src={heroImg}
-                    alt="Librario Login"
-                    className="img-fluid"
-                  />
-                </figure>
-              </div>
+              <figure className="img-wrapper" style={{ maxHeight: 350 }}>
+                <img src={heroImg} alt="Librario Login" className="img-fluid" />
+              </figure>
             </Fade>
           </div>
           <div className="d-none d-lg-block col-1"></div>
@@ -119,11 +113,7 @@ const LoginForm = (props: LoginFormProps) => {
                 jika belum mendaftar
               </p>
               <Link to="/register">
-                <Button
-                  className="btn btn-info py-2"
-                  isBlock
-                  styles={{ width: 200 }}
-                >
+                <Button className="btn py-2" isBlock styles={{ width: 200 }}>
                   Daftar Sekarang
                 </Button>
               </Link>

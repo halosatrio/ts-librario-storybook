@@ -50,7 +50,7 @@ const RegisterForm = (props: RegisterProps) => {
               <div className="row">
                 <p
                   className="text-gray-500 text-center text-md-left px-5"
-                  style={{ marginBottom: 60 }}
+                  style={{ marginBottom: 60, fontSize: "0.9rem" }}
                 >
                   ketentuan mengenai uang deposito dapat dibaca{" "}
                   <Link to="/user-guide">di sini</Link>
