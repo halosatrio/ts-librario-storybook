@@ -59,7 +59,7 @@ const CheckoutPage = () => {
           <Button
             className="btn py-2"
             isBlock
-            isPrimary
+            variant="primary"
             styles={{ width: 200 }}
           >
             Pinjam Buku

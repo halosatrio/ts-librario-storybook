@@ -43,7 +43,7 @@ const LoginForm = (props: LoginFormProps) => {
             <Button
               className="btn py-2 mt-4"
               isBlock
-              isPrimary
+              variant="primary"
               styles={{ width: 200 }}
             >
               Login
@@ -100,7 +100,7 @@ const LoginForm = (props: LoginFormProps) => {
                 <Button
                   className="btn py-2 mt-4"
                   isBlock
-                  isPrimary
+                  variant="primary"
                   styles={{ width: 200 }}
                 >
                   Login

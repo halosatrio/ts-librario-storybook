@@ -82,7 +82,7 @@ const BookingForm = ({ data }: { data: Partial<BooksData> | undefined }) => {
         </h6>
         <Button
           className="btn"
-          isPrimary
+          variant="primary"
           hasShadow
           onClick={handleStartBooking}
         >

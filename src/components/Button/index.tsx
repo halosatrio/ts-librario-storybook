@@ -14,13 +14,11 @@ type ButtonProps = {
    */
   isDisabled?: boolean;
   /**
-   * button Primary styling: blue
+   * button variant primary or light
+   * primary styling: blue
+   * light styling: almost white 
    */
-  isPrimary?: boolean;
-  /**
-   * button Light styling: almost white
-   */
-  isLight?: boolean;
+  variant?: "primary" | "light";
   /**
    * button Loading State
    */
@@ -52,8 +50,7 @@ const Button = ({
   className,
   isDisabled,
   isLoading,
-  isPrimary,
-  isLight,
+  variant = "primary",
   size = "md",
   isBlock,
   hasShadow,
@@ -62,8 +59,8 @@ const Button = ({
 }: ButtonProps) => {
   const classNames = [className];
 
-  if (isPrimary) classNames.push("btn-primary");
-  if (isLight) classNames.push("btn-light");
+  if (variant === 'primary') classNames.push("btn-primary");
+  if (variant === 'light') classNames.push("btn-light");
   if (size === "lg") classNames.push("btn-lg");
   if (size === "sm") classNames.push("btn-sm");
   if (isBlock) classNames.push("btn-block");

@@ -4,12 +4,21 @@ import Button from ".";
 export default {
   component: Button,
   title: "Button",
+  argTypes: {
+    variant: { control: 'radio', option: ["primary", "light"] },
+    isDisabled: { control: 'boolean' },
+    isLoading: { control: 'boolean' },
+    size: { control: 'radio', option: ["sm", "md", "lg"] },
+    hasShadow: { control: 'boolean' },
+    isBlock: { control: 'boolean' },
+  }
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
+  variant: "primary",
   children: "Button Default",
 };
 export const Disable = Template.bind({});
@@ -22,27 +31,16 @@ Loading.args = {
   isLoading: true,
   children: "Button",
 };
-
-export const Primary = Template.bind({});
-Primary.args = {
-  isPrimary: true,
-  children: "Button primary",
+export const Variant = Template.bind({});
+Variant.args = {
+  variant: "primary",
+  children: "Button style variant",
 };
-
-export const Light = Template.bind({});
-Light.args = {
-  isLight: true,
-  children: "Button light",
-};
-export const Small = Template.bind({});
-Small.args = {
+export const Size = Template.bind({});
+Size.args = {
   size: "sm",
-  children: "Button small",
-};
-export const Large = Template.bind({});
-Large.args = {
-  size: "lg",
-  children: "Button large",
+  variant: 'primary',
+  children: "Different Button Size",
 };
 export const Shadow = Template.bind({});
 Shadow.args = {

@@ -40,7 +40,7 @@ const Jumbotron = ({
               <Button
                 className="px-5"
                 hasShadow
-                isPrimary
+                variant="primary"
                 onClick={showPilihanBuku}
               >
                 Pinjam Buku
@@ -115,7 +115,7 @@ const Jumbotron = ({
             <Button
               className="px-5"
               hasShadow
-              isPrimary
+              variant="primary"
               onClick={showPilihanBuku}
               styles={{ zIndex: 3 }}
             >

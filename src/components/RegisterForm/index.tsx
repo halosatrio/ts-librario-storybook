@@ -97,7 +97,7 @@ const RegisterForm = (props: RegisterProps) => {
                 <Button
                   className="btn py-2 mt-4"
                   isBlock
-                  isPrimary
+                  variant="primary"
                   styles={{ width: 200 }}
                 >
                   Daftar
